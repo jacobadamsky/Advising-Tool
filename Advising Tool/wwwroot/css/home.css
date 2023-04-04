@@ -1,0 +1,64 @@
+
+:root {
+    --menu-bg: gray;
+    --menu-font-color: #FFFFFF;
+    --menu-border: black;
+    --menu-bg-selected: #333333;
+    --menu-bg-hover: #52dcff;
+    --menu-bg-selected-chevron: #3cac1a;
+}
+
+body {
+    width: inherit;
+    height: inherit;
+}
+
+.undervsgrad {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: max-content;
+}
+
+    .undervsgrad .gradspacer {
+        width: 50px;
+    }
+
+    .undervsgrad button {
+        width: fit-content;
+        background-color: white;
+        padding: 15px 30px 15px 30px;
+        border: 2px solid darkgray;
+        cursor: pointer;
+        margin-top: 100px;
+        border-radius: 4px;
+    }
+
+        .undervsgrad button:hover {
+            border: 2px solid black;
+            background-color: lightgray;
+            cursor: pointer;
+        }
+
+.undergradschedule {
+    border: 5px inset black;
+    height: 100px;
+}
+
+.wpilink {
+    display: none;
+}
+
+    .wpilink.active {
+        display: flex;
+        margin-top: 180px;
+        margin-left: 0;
+    }
+
+    .wpilink:hover .wpibutton {
+        cursor: pointer;
+        color: gray;
+    }

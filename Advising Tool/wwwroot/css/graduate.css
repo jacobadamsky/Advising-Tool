@@ -1,0 +1,62 @@
+body {
+    overflow: clip;
+    width:100%;
+}
+
+:root {
+    --menu-bg: gray;
+    --menu-font-color: #FFFFFF;
+    --menu-border: black;
+    --menu-bg-selected: #333333;
+    --menu-bg-hover: #52dcff;
+    --menu-bg-selected-chevron: #3cac1a;
+}
+
+.undervsgrad {
+    display: table-cell;
+    padding: 100px;
+}
+
+.scheduling {
+    width: 375px;
+    height: stretch;
+    border: groove;
+    padding-left: 5px;
+    margin-top: 50px;
+    padding-bottom: 5px;
+}
+
+.scheduleview {
+    background-color: #12db00;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px 16px;
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: max-content;
+    font-size: 16px;
+}
+
+    .scheduleview:hover {
+        background-color: #0fb800;
+        color: lightgray;
+    }
+
+.schedules {
+    width: 100%;
+    height: stretch;
+    border: inset;
+}
+
+select {
+    width: 350px;
+}
+
+button {
+    margin-top: 30px;
+    border-radius: 5px;
+    border-width: 1px;
+}

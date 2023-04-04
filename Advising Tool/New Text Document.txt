@@ -1,0 +1,1762 @@
+
+    {
+        "AREA": "BCB",
+        "DEGREE": "MS",
+        "FINAL": [
+            [
+                {
+                    "MAX": 9,
+                    "MIN": 6,
+                    "NUM": 0,
+                    "COURSES": [
+                        {
+                            "ID": "599",
+                            "MAX": 9,
+                            "MIN": 6,
+                            "AREA": "BCB"
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "MAX": 27,
+                    "MIN": 24,
+                    "NUM": 0,
+                    "COURSES": [
+                        {
+                            "ID": "FREE",
+                            "MAX": 27,
+                            "MIN": 24,
+                            "AREA": "BCB"
+                        }
+                    ]
+                }
+            ]
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "BB",
+        "DEGREE": "MSBBT",
+        "FINAL": [
+            [
+                {
+                    "MAX": 30,
+                    "MIN": 30,
+                    "NUM": 0,
+                    "COURSES": [
+                        {
+                            "ID": "699",
+                            "MAX": 30,
+                            "MIN": 30,
+                            "AREA": "BCB"
+                        }
+                    ]
+                }
+            ]
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "BB",
+        "DEGREE": "MSBT",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "BB",
+        "DEGREE": "PHD",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "BME",
+        "DEGREE": "ME",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "BME",
+        "DEGREE": "MST",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "BME",
+        "DEGREE": "MSP",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "BME",
+        "DEGREE": "PHD",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "BUS",
+        "DEGREE": "MSBA",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "BUS",
+        "DEGREE": "MSIT",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "BUS",
+        "DEGREE": "MSIUX",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "BUS",
+        "DEGREE": "MSMG",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "BUS",
+        "DEGREE": "MSOSCA",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "BUS",
+        "DEGREE": "MBA",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "BUS",
+        "DEGREE": "PHD",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "CHE",
+        "DEGREE": "MSPT",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "CHE",
+        "DEGREE": "MSPNT",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "CH",
+        "DEGREE": "MST",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "CH",
+        "DEGREE": "MSNT",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "CH",
+        "DEGREE": "PHD",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "CE",
+        "DEGREE": "ME",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "CE",
+        "DEGREE": "MSCE",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "CE",
+        "DEGREE": "MSEE",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "CE",
+        "DEGREE": "PHD",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "CCA",
+        "DEGREE": "MS",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "CS",
+        "DEGREE": "MCS",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "CS",
+        "DEGREE": "MST",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "CS",
+        "DEGREE": "MSNT",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "CS",
+        "DEGREE": "MSSEC",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "CS",
+        "DEGREE": "PHD",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "CS",
+        "DEGREE": "MSCYSEC",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "DS",
+        "DEGREE": "GC",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "DS",
+        "DEGREE": "MS",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "DS",
+        "DEGREE": "PHD",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "ECE",
+        "DEGREE": "GC",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "ECE",
+        "DEGREE": "MST",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "ECE",
+        "DEGREE": "MSNT",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "ECE",
+        "DEGREE": "MEECE",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "ECE",
+        "DEGREE": "MEPSE",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "ECE",
+        "DEGREE": "PHD",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "FPE",
+        "DEGREE": "GC",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "FPE",
+        "DEGREE": "MS",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "FPE",
+        "DEGREE": "PHD",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "IMGD",
+        "DEGREE": "MFA",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "IMGD",
+        "DEGREE": "MS",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "IMGD",
+        "DEGREE": "PHD",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "LST",
+        "DEGREE": "MST",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "LST",
+        "DEGREE": "MSCW",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "LST",
+        "DEGREE": "PHD",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "MFE",
+        "DEGREE": "MST",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "MFE",
+        "DEGREE": "MSNT",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "MFE",
+        "DEGREE": "PHD",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "MTE",
+        "DEGREE": "MST",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "MTE",
+        "DEGREE": "MSNT",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "MTE",
+        "DEGREE": "PHD",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "MA",
+        "DEGREE": "MME",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "MA",
+        "DEGREE": "MSAM",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "MA",
+        "DEGREE": "MSAS",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "MA",
+        "DEGREE": "MMED",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "MA",
+        "DEGREE": "MSFM",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "MA",
+        "DEGREE": "MSIM",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "MA",
+        "DEGREE": "PHDM",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "MA",
+        "DEGREE": "PHDM",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "ME",
+        "DEGREE": "GCMETL",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "ME",
+        "DEGREE": "MST",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "ME",
+        "DEGREE": "MSNT",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "ME",
+        "DEGREE": "PHDM",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "NEU",
+        "DEGREE": "MST",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "NEU",
+        "DEGREE": "MSNT",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "PH",
+        "DEGREE": "MPED",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "PH",
+        "DEGREE": "GCNSE",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "PH",
+        "DEGREE": "MST",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "PH",
+        "DEGREE": "MSNT",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "PH",
+        "DEGREE": "PHD",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "RBE",
+        "DEGREE": "GC",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "RBE",
+        "DEGREE": "MST",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "RBE",
+        "DEGREE": "MSNT",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "RBE",
+        "DEGREE": "PHD",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "DEV",
+        "DEGREE": "MS",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "SD",
+        "DEGREE": "MSSD",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "SD",
+        "DEGREE": "MSSM",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "SD",
+        "DEGREE": "PHDSD",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "SDIM",
+        "DEGREE": "GC",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "SDIM",
+        "DEGREE": "MS",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "SE",
+        "DEGREE": "STC",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "SE",
+        "DEGREE": "GC",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "SE",
+        "DEGREE": "GCF",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "SE",
+        "DEGREE": "AC",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "SE",
+        "DEGREE": "MS",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "SE",
+        "DEGREE": "PHD",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "OTHER",
+        "DEGREE": "GCPSM",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "OTHER",
+        "DEGREE": "GCLSM",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "OTHER",
+        "DEGREE": "IMSBSM",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "OTHER",
+        "DEGREE": "IMSMEM",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "OTHER",
+        "DEGREE": "IMSPSM",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    },
+    {
+        "AREA": "OTHER",
+        "DEGREE": "IMSSEL",
+        "FINAL": [
+            {
+                "AREA": "",
+                "ID": "",
+                "CREDITS": 0,
+                "NUM": 0
+            }
+        ],
+        "SECTIONS": [],
+        "ONESECTION": [],
+        "ELECTIVE": {
+            "FREE": 0,
+            "SPECIFIC": []
+        }
+    }

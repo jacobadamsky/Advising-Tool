@@ -1,0 +1,312 @@
+
+main {
+    width: calc(100%);
+    overflow-x: hidden;
+}
+
+    main body {
+        width: calc(100%);
+        justify-content: left;
+    }
+
+.courseselection{
+    width:20vw;
+}
+
+.coursesellabel {
+    user-select: none;
+    width: 100%;
+    font-size: 30px;
+    position: relative;
+    text-align: center;
+}
+
+.sectional {
+    display: flex;
+}
+
+.degreeinfo {
+    padding-top: 20px;
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+.label {
+    user-select: none;
+    font-weight: 400;
+    width: 50%;
+    font-size: 20px;
+}
+
+.title {
+    font-weight: 700;
+}
+
+.butselbar {
+    border: 3px solid #85202d;
+    border-radius: 5px;
+    display: inline-flex;
+    height: 50px;
+    margin-left: 20px;
+    width: calc(100% - 40px);
+}
+
+.butsel {
+    user-select: none;
+    justify-content: center;
+    height: auto;
+    cursor: pointer;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    color: #1d1d1d;
+    width: 34%;
+    overflow: hidden;
+    background-color: #b02b3c;
+}
+
+    .butsel.active {
+        background-color: #7d202c;
+        color: black;
+        font-weight: 700;
+    }
+
+.finalproj {
+    display: inline-flex;
+}
+
+.area {
+    margin-left: 3%;
+    margin-top: 15px;
+}
+
+.sectionlabel {
+    user-select: none;
+    color: black;
+    background: #b02b3c;
+    font-weight: 700;
+    font-size: 22px;
+    padding: 6px 14px 6px 14px;
+    margin: 10px 0px 10px 0px;
+    height: min-content;
+    width: max-content;
+}
+
+.course {
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+    width: stretch;
+}
+
+.prereqlabel, .descriptionlabel {
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.prereqdiv {
+    margin-left: 15px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.description {
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    text-indent: 30px;
+}
+
+.courselabel {
+    cursor: pointer;
+    font-weight: 700;
+    user-select: none;
+    margin-left: 20px;
+}
+
+.courseheader {
+    cursor: pointer;
+    user-select: none;
+    color: black;
+    background: #b5b5b5;
+    padding: 7px 10px 7px 10px;
+    width: stretch;
+}
+
+    .courseheader[active=true] {
+        background-color: #13de11;
+    }
+
+.creditslabel {
+    user-select: none;
+    font-size: 18px;
+    background: #b02b3c;
+    font-weight: 600;
+    padding: 4px 6px 4px 6px;
+    color: black;
+    margin-left: 5px;
+}
+
+.spacer {
+    background: #7d202c;
+    height: 3px;
+    margin: 10px 0px 10px 0px;
+}
+
+.electives {
+    display: grid;
+    height: min-content;
+}
+
+.electivearea {
+    display: grid;
+}
+
+    .electivearea .electivefilter {
+        margin-bottom: 10px;
+        width: 25vw;
+    }
+
+.verticalspacer {
+    width: 3px;
+    height: stretch;
+    background: #7d202c;
+    margin: 20px;
+}
+
+.electivelabel {
+    user-select: none;
+    color: black;
+    background: #b02b3c;
+    font-weight: 700;
+    font-size: 22px;
+    padding: 6px 14px 6px 14px;
+    margin: 10px 0px 10px 0px;
+    height: min-content;
+    width: max-content;
+}
+
+.freelective, .relatedelective, .approvedelective {
+    overflow-y: scroll;
+    scrollbar-color: black;
+    height: 300px;
+    border: 2px solid black;
+    width: 100%;
+}
+
+.electiveheader {
+    display: inline-flex;
+}
+
+.electivecourse {
+    border: 1px solid black;
+    width: stretch;
+    margin: 4px;
+    background: #b5b5b5;
+    padding: 2px;
+    cursor: pointer;
+    user-select: none;
+    display: grid;
+}
+
+    .electivecourse input {
+        margin: 0px 5px 0px 5px;
+    }
+
+.creditlabel {
+    font-weight: 700;
+    text-indent: 10px;
+    padding-top: 5px;
+}
+
+.selectedcourses {
+    display: inline-flex;
+}
+
+.year {
+    margin: 1vw 3vh 1vw 3vh;
+    border: 2px solid black;
+    width: 45vw;
+    display: grid;
+    height: stretch;
+}
+
+.semestercourses {
+    border: 2px solid black;
+    height: stretch;
+    width: 100%;
+    min-height: 25vh;
+    margin-right: 5px;
+}
+
+.yearlabel {
+    user-select: none;
+    padding: 0px 10px 0px 10px;
+    background: #b02b3c;
+    font-size: 26px;
+    font-weight: 700;
+    color: black;
+    width: calc(45vw - 4px);
+    text-align: center;
+    cursor: pointer;
+}
+
+.semester {
+    display: inline-flex;
+}
+
+.semesterdiv {
+    margin: 5px 5px 5px 5px;
+    min-height: min-content;
+    height: stretch;
+    width: 44vw;
+    display: grid;
+}
+
+.selectedlabel {
+    user-select: none;
+    height: min-content;
+    padding: 6px 10px 6px 10px;
+    background: #b02b3c;
+    font-size: 20px;
+    font-weight: 700;
+    color: black;
+    width: max-content;
+}
+
+.scheduleview {
+    display: grid;
+    height: max-content;
+}
+
+.semesteradd {
+    transform: rotate(180deg);
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+    color: black;
+    width: 50px;
+    min-height: 25vw;
+    height: stretch;
+    cursor: pointer;
+    background: #16d700;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    border-end-end-radius: 20px;
+    border-end-start-radius: 20px;
+    user-select: none;
+}
+
+.semesterlabel {
+    user-select: none;
+    background: green;
+    width: max-content;
+    font-size: 16px;
+    font-weight: 700;
+    color: black;
+    padding: 6px 10px;
+    margin: 0px 4px 4px 4px;
+}
