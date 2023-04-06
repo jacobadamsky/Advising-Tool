@@ -210,19 +210,28 @@
                             credits = creditsMax.ToString() + " credits";
                         }
                     }
-                    if (creditsMax.ToString() == "")
-                    {
-                        <label class="sectionlabel">@courseSection.GetProperty("NAME").ToString()</label>
-                        <br />
-                        <label class="creditslabel">Courses in this section must be taken for all terms of residency</label>
-                    }
-                    else
-                    {
-                        <label class="sectionlabel">@courseSection.GetProperty("NAME").ToString() - @credits</label>
-
-                        <br />
-                    }
                     <div class="coursesection" data-creditcount="0" data-creditsmax="@creditsMax" data-creditsmin="@min.ToString()">
+                        @if (creditsMax.ToString() == "")
+                        {
+                            <label class="sectionlabel">
+                                <label class="minimize" onclick="minimizeChildren(this)">
+                                    -
+                                </label>
+                                @courseSection.GetProperty("NAME").ToString()
+                            </label>
+                            <br />
+                            <label class="creditslabel">Courses in this section must be taken for all terms of residency</label>
+                        }
+                        else
+                        {
+                            <label class="sectionlabel">
+                                <label class="minimize" onclick="minimizeChildren(this)">
+                                    -
+                                </label>
+                                @courseSection.GetProperty("NAME").ToString() - @credits
+                            </label>
+                            <br />
+                        }
                         @foreach (JsonElement courseGroup in courseSection.GetProperty("OPTIONS").EnumerateArray())
                         {
                             <div class="courseGroup">
@@ -231,10 +240,10 @@
                                     JsonElement AREA = new(), ID = new();
                                     course.TryGetProperty("AREA", out AREA);
                                     course.TryGetProperty("ID", out ID);
-                                    Course courseQuery = new(null, null, null, null, null, null);
+                                    Course courseQuery = new(null, null, null, null, null, null, null);
                                     if (ID.ToString() == "")
                                     {
-                                        courseQuery = new("", "Any graduate course in the " + AREA.ToString() + " area.", "", "", "", "[]");
+                                        courseQuery = new("", "Any graduate course in the " + AREA.ToString() + " area.", "", "", "", "[]", "[]");
                                     }
                                     else
                                     {
@@ -321,6 +330,48 @@
                                                 else
                                                 {
                                                     <label class="prereqlabel">No Prerequisites</label>
+                                                }
+                                            </div>
+                                            <div class="recommended">
+                                                @if (courseQuery.REC!.Length > 0)
+                                                {
+                                                    <label class="reclabel">Recommended Background</label>
+                                                    <br />
+                                                    <div class="recdiv">
+                                                        @foreach (JsonElement rec in ParseJson<JsonElement>(courseQuery.REC).EnumerateArray())
+                                                        {
+                                                            if (rec.GetArrayLength() > 1)
+                                                            {
+                                                                foreach (JsonElement recCourse in rec.EnumerateArray())
+                                                                {
+                                                                    if (recCourse.ToString() == rec.EnumerateArray().Last().ToString())
+                                                                    {
+                                                                        <text> or @recCourse.GetProperty("AREA") @recCourse.GetProperty("ID")</text>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        if (rec.EnumerateArray().Count() == 2)
+                                                                        {
+                                                                            <text>@recCourse.GetProperty("AREA") @recCourse.GetProperty("ID")</text>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <text>@recCourse.GetProperty("AREA") @recCourse.GetProperty("ID"), </text>
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                <text>@rec[0].GetProperty("AREA") @rec[0].GetProperty("ID")</text>
+                                                            }
+                                                            <br />
+                                                        }
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <label class="reclabel">No Recommended Background</label>
                                                 }
                                             </div>
                                         </div>

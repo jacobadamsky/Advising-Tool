@@ -23,7 +23,7 @@ body {
     }
 
 .description {
-    margin-left: 20px;
+    margin-left: 10px;
     font-size: 16px;
     font-weight: 400;
     text-indent: 30px;
@@ -88,13 +88,14 @@ body {
     overflow-y: scroll;
 }
 
-.prereqlabel, .descriptionlabel {
+.prereqlabel, .descriptionlabel, .reclabel {
     font-size: 20px;
     font-weight: 700;
     margin-left: 10px;
+    margin-bottom: 10px
 }
 
-.prereqdiv {
+.prereqdiv, .recdiv {
     margin-left: 15px;
     font-size: 16px;
     font-weight: 400;
@@ -111,3 +112,15 @@ body {
         padding: unset;
         margin: 0px 20px 0px 0px;
     }
+
+
+.spacer {
+    background: #2c2c2c;
+    height: 3px;
+    margin: 10px 35px 20px 35px;
+}
+
+.creditlabel {
+    margin-left: 40px;
+    font-weight: 700;
+}

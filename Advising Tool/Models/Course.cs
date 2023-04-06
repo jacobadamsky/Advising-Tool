@@ -3,7 +3,7 @@ namespace Advising_Tool.Models
 {
     public class Course
     {
-        public Course(string? aREA, string? iD, string? dESC, string? nAME, string? cREDITS, string? pREREQ)
+        public Course(string? aREA, string? iD, string? dESC, string? nAME, string? cREDITS, string? pREREQ, string? rEC)
         {
             AREA = aREA;
             ID = iD;
@@ -11,6 +11,7 @@ namespace Advising_Tool.Models
             NAME = nAME;
             CREDITS = cREDITS;
             PREREQ = pREREQ;
+            REC = rEC;
         }
 
         public string? AREA
@@ -34,6 +35,10 @@ namespace Advising_Tool.Models
             get; set;
         }
         public string? PREREQ
+        {
+            get; set;
+        }
+        public string? REC
         {
             get; set;
         }

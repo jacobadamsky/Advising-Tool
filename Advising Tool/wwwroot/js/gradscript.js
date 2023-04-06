@@ -303,6 +303,27 @@ function disableCoursesInGroup(element) {
   });
 }
 
+function minimizeChildren(element) {
+  element.toggleAttribute('active');
+  var parent = element.parentElement.parentElement;
+  parent.querySelectorAll(".courseGroup").forEach(sect => {
+    sect.hidden ^= true;
+    if (sect.hidden == true) {
+      element.innerHTML = "+";
+    } else {
+      element.innerHTML = "-";
+    }
+  });
+  parent.querySelectorAll(".spacer").forEach(sect => {
+    sect.hidden ^= true;
+    if (sect.hidden == true) {
+      element.innerHTML = "+";
+    } else {
+      element.innerHTML = "-";
+    }
+  });
+}
+
 function toggleCourseInfo(element) {
   element.parentElement.querySelector(".courseinfo").hidden ^= true;
 }

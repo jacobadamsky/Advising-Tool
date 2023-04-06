@@ -70,6 +70,28 @@ main {
     }
 
 /*Course Selection CSS*/
+.minimize {
+    font-family:monospace;
+    height: 100%;
+    font-weight: 900;
+    padding: 0px 15px;z
+    border: 1px solid black;
+    background: #dd0707;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+    .minimize:hover {
+        background: #b00000; /*#07a500*/
+    }
+
+    .minimize[active] {
+        background: #00b004;
+    }
+
+        .minimize[active]:hover {
+            background: #006d09;
+        }
 
 .sectionlabel {
     user-select: none;
@@ -288,12 +310,13 @@ main {
         background: #717171;
     }
 
-    .selectedcourses .courseheader:hover {
-        background: #949494;
-    }
-    .selectedcourses .courseheader[active=true]{
-        background:green;
-    }
+        .selectedcourses .courseheader:hover {
+            background: #949494;
+        }
+
+        .selectedcourses .courseheader[active=true] {
+            background: green;
+        }
 
 .year {
     background: #d8d8d8;

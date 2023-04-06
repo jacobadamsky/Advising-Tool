@@ -50,7 +50,7 @@ namespace Advising_Tool.Views.Home
                 {
                     while (sdr.Read())
                     {
-                        arr.Add(new Course(sdr["AREA"].ToString(), sdr["ID"].ToString(), sdr["DESC"].ToString(), sdr["NAME"].ToString(), sdr["CREDIT"].ToString(), sdr["PREREQ"].ToString()));
+                        arr.Add(new Course(sdr["AREA"].ToString(), sdr["ID"].ToString(), sdr["DESC"].ToString(), sdr["NAME"].ToString(), sdr["CREDIT"].ToString(), sdr["PREREQ"].ToString(), sdr["REC"].ToString()));
                     }
                 }
                 con.Close();
@@ -78,7 +78,7 @@ namespace Advising_Tool.Views.Home
         }
         public static Course GetCourseInfo(string area, string id)
         {
-            Course retValue = new(null, null, null, null, null, null);
+            Course retValue = new(null, null, null, null, null, null,null);
             using (MySqlConnection con = new(Utils.ConnectionString))
             {
                 using MySqlCommand cmd = new("SELECT * FROM catalog WHERE AREA='" + area + "' AND ID='" + id + "'");
@@ -88,7 +88,7 @@ namespace Advising_Tool.Views.Home
                 {
                     while (sdr.Read())
                     {
-                        retValue = new(sdr["AREA"].ToString(), sdr["ID"].ToString(), sdr["DESC"].ToString(), sdr["NAME"].ToString(), sdr["CREDIT"].ToString(), sdr["PREREQ"].ToString());
+                        retValue = new(sdr["AREA"].ToString(), sdr["ID"].ToString(), sdr["DESC"].ToString(), sdr["NAME"].ToString(), sdr["CREDIT"].ToString(), sdr["PREREQ"].ToString(), sdr["REC"].ToString());
                     }
                 }
                 con.Close();
