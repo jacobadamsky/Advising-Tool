@@ -41,7 +41,7 @@
                     <div class="semesterdiv">
                         <label class="semesterlabel">Fall Semester</label>
                         <div class="semester">
-                            <div class="semesteradd" onclick="addSelectedCourse(this.parentElement.parentElement.querySelector('.semestercourses'))">
+                            <div class="semesteradd" onclick="addSelectedCourse(this)">
                                 Add Selected Course
                             </div>
                             <div class="semestercourses"></div>
@@ -50,7 +50,7 @@
                     <div class="semesterdiv">
                         <label class="semesterlabel">Spring Semester</label>
                         <div class="semester">
-                            <div class="semesteradd" onclick="addSelectedCourse(this.parentElement.querySelector('.semestercourses'))">
+                            <div class="semesteradd" onclick="addSelectedCourse(this)">
                                 Add Selected Course
                             </div>
                             <div class="semestercourses"></div>
@@ -110,7 +110,7 @@
                                     @foreach (JsonElement courseElmt in courseGroup.EnumerateArray())
                                     {
                                         Course course = GetCourseInfo(courseElmt.GetProperty("AREA").ToString(), courseElmt.GetProperty("ID").ToString());
-                                        <div class="course" data-numtaken="@finalSection.GetProperty("NUM").ToString()" id="@course.AREA@course.ID">
+                                        <div class="course" data-numtaken="@finalSection.GetProperty("NUM").ToString()" id="@course.AREA@course.ID" data-prereq="@course.PREREQ">
                                             <div class="courseheader" onclick="toggleCourseInfo(this)">
                                                 <input class="coursecheckbox" type="checkbox" oninput="modifyCourseScheduling(this)" onclick="updateCreditCount(this); disableCoursesInGroup(this); event.stopPropagation();" />
                                                 <label class="courselabel">@course.AREA @course.ID - @course.NAME</label>
@@ -271,7 +271,7 @@
                                             credit[1] = courseQuery.CREDITS!;
                                         }
                                     }
-                                    <div class="course" data-credit="@credit[1]" data-creditmin="@credit[0]" id="@courseQuery.AREA@courseQuery.ID">
+                                    <div class="course" data-credit="@credit[1]" data-creditmin="@credit[0]" data-prereq="@courseQuery.PREREQ" id="@courseQuery.AREA@courseQuery.ID">
                                         <div class="courseheader" onclick="toggleCourseInfo(this)">
                                             <input class="coursecheckbox" type="checkbox" oninput="modifyCourseScheduling(this)" onclick="event.stopPropagation(); updateCreditCount(this); disableCoursesInGroup(this); removeFromSchedule(this)" />
                                             <label class="courselabel">

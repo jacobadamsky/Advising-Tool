@@ -38,6 +38,25 @@ namespace Advising_Tool.Views.Home
             val2 = split[1].Replace("}", null).Replace("\"", "");
             return new(val1, val2);
         }
+        public static List<Course> GetUGCatalog()
+        {
+            List<Course> arr = new();
+            using (MySqlConnection con = new(Utils.ConnectionString))
+            {
+                using MySqlCommand cmd = new("SELECT * FROM ugcatalog");
+                cmd.Connection = con;
+                con.Open();
+                using (MySqlDataReader sdr = cmd.ExecuteReader())
+                {
+                    while (sdr.Read())
+                    {
+                        arr.Add(new Course(sdr["AREA"].ToString(), sdr["ID"].ToString(), sdr["DESC"].ToString(), sdr["NAME"].ToString(), sdr["CREDIT"].ToString(), sdr["PREREQ"].ToString(), sdr["REC"].ToString()));
+                    }
+                }
+                con.Close();
+            }
+            return arr;
+        }
         public static List<Course> GetCatalog()
         {
             List<Course> arr = new();

@@ -33,7 +33,7 @@ main {
     font-weight: 400;
     width: 50%;
     font-size: 20px;
-    border-radius: 5px;
+    border-radius: 7px;
 }
 
 .title {
@@ -42,7 +42,7 @@ main {
 
 .butselbar {
     border: 3px solid #85202d;
-    border-radius: 5px;
+    border-radius: 7px;
     display: inline-flex;
     height: 50px;
     margin-left: 20px;
@@ -71,15 +71,20 @@ main {
 
 /*Course Selection CSS*/
 .minimize {
-    font-family:monospace;
+    font-family: monospace;
     height: 100%;
     font-weight: 900;
-    padding: 0px 15px;z
-    border: 1px solid black;
+    padding: 0px 15px;
+    padding-bottom:2px;
+    border: 1px outset black;
     background: #dd0707;
     border-radius: 10px;
     cursor: pointer;
 }
+
+    .minimize:active {
+        border: 1px inset black;
+    }
 
     .minimize:hover {
         background: #b00000; /*#07a500*/
@@ -104,7 +109,7 @@ main {
     height: min-content;
     width: stretch;
     max-width: 100%;
-    border-radius: 5px;
+    border-radius: 7px;
 }
 
 .spacer {
@@ -114,12 +119,11 @@ main {
 }
 
 .verticalspacer {
-    width: 3px;
+    width: 2px;
     height: stretch;
     background: #7d202c;
     margin: 20px;
 }
-
 
 /*Elective CSS*/
 .electives {
@@ -146,7 +150,7 @@ main {
     margin: 10px 0px 10px 0px;
     height: min-content;
     width: max-content;
-    border-radius: 5px;
+    border-radius: 7px;
 }
 
 .freelective, .relatedelective, .approvedelective {
@@ -164,7 +168,7 @@ main {
 }
 
 .electivecourse {
-    border-radius: 5px;
+    border-radius: 7px;
     width: stretch;
     margin: 7px 5px;
     background: #b5b5b5;
@@ -181,7 +185,7 @@ main {
 /*Course CSS*/
 .warninglabel {
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 7px;
     background: red;
     padding: 4px 7px;
 }
@@ -211,7 +215,7 @@ main {
     font-size: 20px;
     font-weight: 600;
     margin-left: 10px;
-    border-radius: 5px;
+    border-radius: 7px;
 }
 
 .prereqdiv {
@@ -241,7 +245,7 @@ main {
     background: #b5b5b5;
     padding: 7px 10px 7px 10px;
     width: stretch;
-    border-radius: 5px;
+    border-radius: 7px;
 }
 
     .courseheader:hover {
@@ -270,6 +274,7 @@ main {
     background: #00ff16;
     margin-top: 14px;
     font-weight: 600;
+    width:max-content;
 }
 
     .download:hover {
@@ -378,7 +383,7 @@ main {
     color: black;
     width: max-content;
     margin: 1vw 0vh 1vw 0vh;
-    border-radius: 5px;
+    border-radius: 7px;
 }
 
 .scheduleview {
@@ -420,7 +425,7 @@ main {
     color: black;
     padding: 6px 10px;
     margin: 0px 4px 4px 4px;
-    border-radius: 5px;
+    border-radius: 7px;
 }
 
 /*Final Project CSS*/
@@ -445,7 +450,7 @@ main {
         border: 1px solid black;
         padding: 4px;
         width: 45vw;
-        border-radius: 5px;
+        border-radius: 7px;
     }
 
         .finalproj .finalgroup .finalcredits {
@@ -457,5 +462,5 @@ main {
             background: #b02b3c;
             font-size: 20px;
             font-weight: 600;
-            border-radius: 5px;
+            border-radius: 7px;
         }

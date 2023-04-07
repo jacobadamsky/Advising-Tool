@@ -14,7 +14,7 @@ body {
 }
 
 .undervsgrad {
-    display: flex;
+    display: grid;
     width: 100%;
     justify-content: center;
     margin: 0;
@@ -31,15 +31,12 @@ body {
         width: fit-content;
         background-color: white;
         padding: 15px 30px 15px 30px;
-        border: 2px solid darkgray;
+        border: 2px outset black;
         cursor: pointer;
-        margin-top: 100px;
-        border-radius: 4px;
     }
 
         .undervsgrad button:hover {
-            border: 2px solid black;
-            background-color: lightgray;
+            background-color: darkgray;
             cursor: pointer;
         }
 
@@ -61,4 +58,29 @@ body {
     .wpilink:hover .wpibutton {
         cursor: pointer;
         color: gray;
+    }
+
+.undergrad, .grad {
+    border: 2px solid gray;
+    border-radius: 25px;
+    background: #e0e0e0;
+    min-width: 45vw;
+    width: min-content;
+    height: min-content;
+    margin-top: 40px;
+    padding: 25px 38px;
+    text-align: center;
+}
+
+    .undergrad button, .grad button {
+        display: inline-block;
+        font-weight: 500;
+        font-size: 21px;
+        width: max-content;
+        border-radius: 15px;
+    }
+
+    .undergrad .description, .grad .description {
+        margin-top: 20px;
+        text-align: center;
     }

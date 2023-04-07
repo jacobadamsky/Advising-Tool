@@ -134,15 +134,116 @@ function removeFromSchedule(element) {
 
 function addSelectedCourse(element) {
   var options = document.querySelector(".courseoptions");
+  var semesterCourses = element.parentElement.querySelector('.semestercourses');
+  var courses = [];
   options.querySelectorAll(".course").forEach(course => {
     var header = course.querySelector(".courseheader");
-    if (header.getAttribute("active") == "true") {
+    if (course.dataset.prereq !== "" && course.dataset.prereq !== undefined && header.getAttribute("active") === "true") {
+      console.trace()
+      var semDiv = document.querySelectorAll(".semestercourses");
+      var prereq = JSON.parse(course.dataset.prereq);
+      for (const semester of semDiv) {
+        if (semester == semesterCourses) {
+          break;
+        } else {
+          semester.querySelectorAll(".course").forEach(subcourse => {
+            courses.push(subcourse);
+          });
+        }
+      }
+      if (courses.length == 0) {
+        header.setAttribute("active", "false");
+        alert("Prerequisite requirement not met for this course.");
+        return;
+      }
+      for (const courseGroup of prereq) {
+        var groupValid = false;
+        for (const course of courseGroup) {
+          courses.forEach(val => {
+            var str = (course.AREA + course.ID);
+            if (val.id == str) {
+              groupValid = true;
+            }
+          });
+        }
+        if (groupValid === false) {
+          header.setAttribute("active", "false");
+          alert("Prerequisite requirement not met for this course.");
+          return;
+        } else {
+          continue;
+        }
+      }
+    }
+    if (header.getAttribute("active") === "true") {
       header.setAttribute("onclick", "sendBackToOptions(this);");
       header.setAttribute("active", false);
       course.parentElement.removeChild(course);
-      element.appendChild(course);
+      semesterCourses.appendChild(course);
     }
   });
+}
+
+/*
+
+
+function temp() {
+  if (header.getAttribute("active") == "true") {
+    if (course.dataset.prereq !== "[]" && course.dataset.prereq !== undefined) {
+      var semDiv = document.querySelectorAll(".semestercourses");
+      var prereq = JSON.parse(course.dataset.prereq);
+      for (const semester of semDiv) {
+        if (semester == semesterCourses) {
+          break;
+        } else {
+          semester.querySelectorAll(".course").forEach(subcourse => {
+            courses.push(subcourse);
+          });
+        }
+      }
+      if (semDiv.length == 0) {
+        console.log("semDiv length is 1")
+        alert("Prerequisite requirement not met for this course.");
+        return;
+      }
+      for (const courseGroup of prereq) {
+        var groupValid = false;
+        for (const course of courseGroup) {
+          courses.forEach(val => {
+            var str = (course.AREA + course.ID);
+            console.log(str);
+            if (val.id == str) {
+              groupValid = true;
+            }
+          });
+        }
+        if (groupValid === false) {
+          console.log("invalid group ")
+          courseGroup.forEach(val => console.log(val))
+          alert("Prerequisite requirement not met for this course.");
+          return;
+        }
+      }
+    } else {
+      header.setAttribute("onclick", "sendBackToOptions(this);");
+      header.setAttribute("active", false);
+      course.parentElement.removeChild(course);
+      semesterCourses.appendChild(course);
+    }
+  }
+}
+*/
+function copyPrerequisite(course) {
+  var arr = JSON.parse(course.dataset.prereq);
+  var arrCopy = [];
+  for (let i = 0; i < arr.length; i++) {
+    var subarr = [];
+    for (let j = 0; j < arr[i].length; j++) {
+      subarr[j] = arr[i][j].AREA + arr[i][j].ID;
+    }
+    arrCopy[i] = subarr
+  }
+  return arrCopy;
 }
 
 function sendBackToOptions(element) {

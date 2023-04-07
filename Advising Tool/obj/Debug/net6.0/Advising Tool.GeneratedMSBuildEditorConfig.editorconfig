@@ -15,8 +15,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\docto\Desktop\Online Advising Tool\Advising Tool\Advising Tool
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/CatalogView.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXRhbG9nVmlldy5jc2h0bWw=
+[C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/GraduateCatalogView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHcmFkdWF0ZUNhdGFsb2dWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/GraduateRequest.cshtml]
@@ -33,6 +33,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/UndergraduateCatalogView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVbmRlcmdyYWR1YXRlQ2F0YWxvZ1ZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/UndergraduateScheduling.cshtml]

@@ -13,8 +13,13 @@ namespace Advising_Tool.Controllers
         {
             _logger = logger;
         }
+        [Route("/Undergraduate-Catalog")]
+        public IActionResult UndergraduateCatalogView()
+        {
+            return View();
+        }
         [Route("/Graduate-Catalog")]
-        public IActionResult CatalogView()
+        public IActionResult GraduateCatalogView()
         {
             return View();
         }
