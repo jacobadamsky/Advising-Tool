@@ -433,7 +433,7 @@
                                     {
                                         creditString = "(" + credit[0] + "-" + credit[1] + " credits" + ")";
                                     }
-                                    <div class="electivecourse" id="@course.AREA@course.ID" data-credits="@course.CREDITS">
+                                    <div class="electivecourse" id="@course.AREA@course.ID" data-credits="@course.CREDITS" data-prereq="@course.PREREQ">
                                         <div class="electiveheader">
                                             <input type="checkbox" oninput="modifyCourseScheduling(this)" onclick="toggleHideDuplicateCourse(this); updateAvailableElectives(this.parentElement.parentElement.parentElement, this.parentElement.parentElement);" />
                                             <div class="electivetitle" onclick="setLocalStorage(this); redirectToCatalog(this);" id="@course.AREA-@course.ID">
@@ -468,7 +468,7 @@
                         && course.CREDITS != "0" && !course.NAME.Contains("Dissertation") && !course.NAME.Contains("Thesis")
                         && !course.NAME.Contains("Seminar") && !course.NAME.Contains("Directed") && !course.NAME.Contains("Internship")))
                                 {
-                                    <div class="electivecourse" id="@course.AREA@course.ID" data-credits="@course.CREDITS">
+                                    <div class="electivecourse" id="@course.AREA@course.ID" data-credits="@course.CREDITS" data-prereq="@course.PREREQ">
                                         <div class="electiveheader">
                                             <input type="checkbox" oninput="modifyCourseScheduling(this)" onclick="toggleHideDuplicateCourse(this); updateAvailableElectives(this.parentElement.parentElement.parentElement, this.parentElement.parentElement);" />
                                             <div class="electivetitle" onclick="setLocalStorage(this); redirectToCatalog(this);" id="@course.AREA-@course.ID">
@@ -503,7 +503,7 @@
                         && !course.NAME.Contains("Dissertation") && !course.NAME.Contains("Thesis") && !course.NAME.Contains("Seminar")
                         && !course.NAME.Contains("Directed") && !course.NAME.Contains("Internship")))
                                 {
-                                    <div class="electivecourse" id="@course.AREA@course.ID" data-credits="@course.CREDITS">
+                                    <div class="electivecourse" id="@course.AREA@course.ID" data-credits="@course.CREDITS" data-prereq="@course.PREREQ">
                                         <div class="electiveheader">
                                             <input type="checkbox" oninput="modifyCourseScheduling(this)" onclick="toggleHideDuplicateCourse(this); updateAvailableElectives(this.parentElement.parentElement.parentElement, this.parentElement.parentElement);" />
                                             <div class="electivetitle" onclick="setLocalStorage(this); redirectToCatalog(this);" id="@course.AREA-@course.ID">
