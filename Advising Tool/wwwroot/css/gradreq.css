@@ -75,28 +75,14 @@ main {
     height: 100%;
     font-weight: 900;
     padding: 0px 15px;
-    padding-bottom:2px;
-    border: 1px outset black;
-    background: #dd0707;
+    padding-bottom: 2px;
+    background: #b02b3c;
     border-radius: 10px;
     cursor: pointer;
+    border-left:1px solid black;
+    border-right:1px solid black;
 }
 
-    .minimize:active {
-        border: 1px inset black;
-    }
-
-    .minimize:hover {
-        background: #b00000; /*#07a500*/
-    }
-
-    .minimize[active] {
-        background: #00b004;
-    }
-
-        .minimize[active]:hover {
-            background: #006d09;
-        }
 
 .sectionlabel {
     user-select: none;

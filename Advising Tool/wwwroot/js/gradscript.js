@@ -139,7 +139,7 @@ function addSelectedCourse(element) {
     options.querySelectorAll(".course").forEach(course => {
         var header = course.querySelector(".courseheader");
         if (header.getAttribute("active") === "true") {
-            if (course.dataset.prereq !== "" && course.dataset.prereq !== undefined && header.getAttribute("active") === "true") {
+            if (course.dataset.prereq !== "" && course.dataset.prereq !== undefined) {
                 var semDiv = document.querySelectorAll(".semestercourses");
                 var prereq = JSON.parse(course.dataset.prereq);
                 for (const semester of semDiv) {
@@ -189,6 +189,47 @@ function addSelectedCourse(element) {
     });
 }
 
+function checkPrerequisite(course) {
+    var semesterCourses = course.parentElement;
+    var courses = [];
+    if (course.dataset.prereq !== "" && course.dataset.prereq !== undefined) {
+        var semDiv = document.querySelectorAll(".semestercourses");
+        var prereq = JSON.parse(course.dataset.prereq);
+        for (const semester of semDiv) {
+            if (semester == semesterCourses) {
+                break;
+            } else {
+                semester.querySelectorAll(".course").forEach(subcourse => {
+                    courses.push(subcourse);
+                });
+            }
+        }
+        if (courses.length == 0) {
+            return false;
+        }
+        var validCourses = [];
+        for (const courseGroup of prereq) {
+            var groupValid = false;
+            for (const subcourse of courseGroup) {
+                for (const val of courses) {
+                    var str = (subcourse.AREA + subcourse.ID);
+                    if (val.id == str) {
+                        groupValid = true;
+                        validCourses.push(val);
+                        break;
+                    }
+                }
+            }
+            if (groupValid === false) {
+                return false;
+            } else {
+                continue;
+            }
+        }
+    }
+    return true;
+}
+
 function copyPrerequisite(course) {
     var arr = JSON.parse(course.dataset.prereq);
     var arrCopy = [];
@@ -203,40 +244,24 @@ function copyPrerequisite(course) {
 }
 
 function sendBackToOptions(element) {
-    var courses = [];
-    var course = element.parentElement;
     var semDiv = document.querySelectorAll(".semestercourses");
     var semesterCourses = element.parentElement.parentElement.parentElement;
+    var options = document.querySelector(".courseoptions");
+
+    element.setAttribute("onclick", "updateSelectedCourses(this)");
+    options.appendChild(element.parentElement);
 
     for (const semester of semDiv) {
         if (semester == semesterCourses) {
             break;
         } else {
-            semester.querySelectorAll(".course").forEach(subcourse => {
-                courses.push(subcourse);
+            semester.querySelectorAll(".course").forEach(val => {
+                if (!checkPrerequisite(val)) {
+                    val.querySelector(".courseheader").setAttribute("onclick", "updateSelectedCourses(this)");
+                    options.appendChild(val);
+                }
             });
         }
-    }
-
-    for (const val of courses) {
-        var header = val.querySelector(".courseheader");
-        if (val.dataset.prereq !== "" && val.dataset.prereq !== undefined) {
-            var prereq = JSON.parse(val.dataset.prereq);
-            for (const group of prereq) {
-                for (const child of group) {
-                    if ((child.AREA + child.ID) === course.id) {
-                        return
-                    }
-                }
-            }
-        }
-    }
-
-    sendBack();
-    function sendBack() {
-        var options = document.querySelector(".courseoptions");
-        element.setAttribute("onclick", "updateSelectedCourses(this)");
-        options.appendChild(element.parentElement);
     }
 }
 
