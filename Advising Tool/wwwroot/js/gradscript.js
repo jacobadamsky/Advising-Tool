@@ -185,8 +185,52 @@ function addSelectedCourse(element) {
             header.setAttribute("active", false);
             course.parentElement.removeChild(course);
             semesterCourses.appendChild(course);
+            if (!checkRecommended(course)) {
+                alert("This course can still be added to your schedule, but you are missing recommended background for this course in your current scheduling.")
+            }
         }
     });
+}
+
+function checkRecommended(course) {
+    var semesterCourses = course.parentElement;
+    var courses = [];
+    if (course.dataset.rec !== "" && course.dataset.rec !== undefined) {
+        var semDiv = document.querySelectorAll(".semestercourses");
+        var rec = JSON.parse(course.dataset.rec);
+        for (const semester of semDiv) {
+            if (semester == semesterCourses) {
+                break;
+            } else {
+                semester.querySelectorAll(".course").forEach(subcourse => {
+                    courses.push(subcourse);
+                });
+            }
+        }
+        if (courses.length == 0) {
+            return false;
+        }
+        var validCourses = [];
+        for (const courseGroup of rec) {
+            var groupValid = false;
+            for (const subcourse of courseGroup) {
+                for (const val of courses) {
+                    var str = (subcourse.AREA + subcourse.ID);
+                    if (val.id == str) {
+                        groupValid = true;
+                        validCourses.push(val);
+                        break;
+                    }
+                }
+            }
+            if (groupValid === false) {
+                return false;
+            } else {
+                continue;
+            }
+        }
+    }
+    return true;
 }
 
 function checkPrerequisite(course) {

@@ -79,8 +79,8 @@ main {
     background: #b02b3c;
     border-radius: 10px;
     cursor: pointer;
-    border-left:1px solid black;
-    border-right:1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
 
 
@@ -197,7 +197,7 @@ main {
     width: stretch;
 }
 
-.prereqlabel, .descriptionlabel {
+.prereqlabel, .descriptionlabel, .reclabel {
     font-size: 20px;
     font-weight: 600;
     margin-left: 10px;
@@ -254,17 +254,21 @@ main {
 
 /*Scheduling CSS*/
 .download {
-    border: 2px inset black;
+    border: none;
+    border-left: 2px solid gray;
+    border-right: 2px solid gray;
     border-radius: 6px;
     font-size: 20px;
-    background: #00ff16;
+    background: #46ff31;
     margin-top: 14px;
     font-weight: 600;
-    width:max-content;
+    width: max-content;
 }
 
     .download:hover {
-        background: #10a11d;
+        background: #17db00;
+        border-left: 2px solid black;
+        border-right: 2px solid black;
     }
 
 .addyear {
