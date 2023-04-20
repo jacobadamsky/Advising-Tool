@@ -2,14 +2,14 @@
 @using System.Text.RegularExpressions
 @using static Advising_Tool.Views.Home.Functions
 
-@model GraduateRequest
+@model UndergraduateRequest
 
 @{
     ViewData["Title"] = "Home Page";
 }
 
 @functions {
-    public Dictionary<string, string> gradOptions = GetGraduateOptions();
+    public Dictionary<string, string> undergradOptions = GetUndergraduateOptions();
 }
 
 <head>
@@ -17,26 +17,24 @@
     <link rel="icon" href="./favicon.ico" />
 </head>
 <body onload="showDegree(); updateSelect();">
-    <form asp-action="GraduateRequest" class="form-horizontal" onchange="showDegree(); updateSelect(); updateLongName();">
+    <form asp-action="UndergraduateRequest" class="form-horizontal" onchange="showDegree(); updateSelect(); updateLongName();">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
             <div class="scheduling">
                 <div>
                     <strong>Area of Study</strong><br />
                     <select asp-for="AREA" id="aos" onclick="changeDegree(); updateLongName();">
-                        @foreach (KeyValuePair<string, string> pair in gradOptions)
+                        @foreach (KeyValuePair<string, string> pair in undergradOptions)
                         {
                             <option value=@pair.Key>@GetStudyAreaName(pair.Key) (@pair.Key)</option>
                         }
                     </select>
                     <span asp-validation-for="AREA" class="text-danger"></span>
                 </div>
-
-
                 <div>
                     <label><b>Degree Options</b></label>
                     <select asp-for="TYPE" id="type" onclick="updateLongName();">
-                        @foreach (KeyValuePair<string, string> pair in gradOptions)
+                        @foreach (KeyValuePair<string, string> pair in undergradOptions)
                         {
                             string[] degrees = pair.Value.Split(",");
                             foreach (string str in degrees)
@@ -56,11 +54,9 @@
                         }
                     </select>
                 </div>
-
-
                 <div>
                     <select asp-for="NAME" id="name" onclick="updateLongName();" hidden>
-                        @foreach (KeyValuePair<string, string> pair in gradOptions)
+                        @foreach (KeyValuePair<string, string> pair in undergradOptions)
                         {
                             @foreach (string str in pair.Value.Replace("[", "").Replace("]", "").Split(","))
                             {
@@ -108,7 +104,7 @@
             } else {
                 t.hidden = false;
             }
-        })
+        });
     }
     function changeDegree() {
         document.querySelector("#type").querySelectorAll("option").forEach(t => {
@@ -116,6 +112,6 @@
                 t.selected = true;
                 return;
             }
-        })
+        });
     }
 </script>

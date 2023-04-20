@@ -59,7 +59,7 @@
                             </div>
                             }
                             <label class="descriptionlabel">Description</label>
-                            <p class="description">@course.DESC</p>
+                            <p class="description">@course.DESCRIPTION</p>
                             <div class="prerequisites">
                                 @if (course.PREREQ != "")
                                 {
@@ -170,27 +170,27 @@
     function filterCourse() {
         var query = document.querySelector(".searchfilter").querySelector("input").value;
         var area = document.querySelector(".areafilter").querySelector("select").value
-        var desc = document.querySelector(".descbool").checked, title = document.querySelector(".titlebool").checked;
+        var DESCRIPTION = document.querySelector(".descbool").checked, title = document.querySelector(".titlebool").checked;
         document.querySelectorAll(".course").forEach(course => {
-            if (desc && !title) {
+            if (DESCRIPTION && !title) {
                 if (course.querySelector(".description").innerHTML.includes(query) && course.id.includes(area)) {
                     course.hidden = false;
                 } else {
                     course.hidden = true;
                 }
-            } else if (!desc && title) {
+            } else if (!DESCRIPTION && title) {
                 if (course.querySelector(".courselabel").innerHTML.includes(query) && course.id.includes(area)) {
                     course.hidden = false;
                 } else {
                     course.hidden = true;
                 }
-            } else if (desc && title) {
+            } else if (DESCRIPTION && title) {
                 if (course.querySelector(".description").innerHTML.includes(query) && (course.querySelector(".courselabel").innerHTML.includes(query)) && course.id.includes(area)) {
                     course.hidden = false;
                 } else {
                     course.hidden = true;
                 }
-            } else if (!desc && !title) {
+            } else if (!DESCRIPTION && !title) {
                 if (course.id.includes(area)) {
                     course.hidden = false;
                 } else {

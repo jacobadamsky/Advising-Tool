@@ -2,16 +2,129 @@
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
 using System.Diagnostics;
+using System.Text.Json;
 
 namespace Advising_Tool.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        [Route("/Add-UGSheet-Redirect")]
+        public IActionResult AddGraduateSheetRedirect(GraduateSchedule schedule)
         {
-            _logger = logger;
+            Console.WriteLine(schedule.COURSES);
+            using MySqlConnection conn = new(Utils.ConnectionString);
+            conn.Open();
+            MySqlCommand comm = conn.CreateCommand();
+            comm.CommandText = "INSERT INTO areas (AREA, DEGREE, COURSES, FINAL, ELECTIVE, DEPTH, NOTES, LONGNAME) VALUES (?AREA, ?DEGREE, ?COURSES, ?FINAL, ?ELECTIVE, ?DEPTH, ?NOTES, ?LONGNAME)";
+            comm.Connection = conn;
+            comm.Parameters.AddWithValue("?AREA", (schedule.AREA == "") ? null : schedule.AREA);
+            comm.Parameters.AddWithValue("?DEGREE", (schedule.DEGREE == "") ? null : schedule.DEGREE);
+            comm.Parameters.AddWithValue("?COURSES", (schedule.COURSES == "") ? "[]" : schedule.COURSES);
+            comm.Parameters.AddWithValue("?FINAL", (schedule.FINAL == "") ? "[]" : schedule.FINAL);
+            comm.Parameters.AddWithValue("?ELECTIVE", (schedule.ELECTIVE == "") ? "[]" : schedule.ELECTIVE);
+            comm.Parameters.AddWithValue("?DEPTH", (schedule.DEPTH == "") ? "[]" : schedule.DEPTH);
+            comm.Parameters.AddWithValue("?NOTES", (schedule.NOTES == "") ? "[]" : schedule.NOTES);
+            comm.Parameters.AddWithValue("?LONGNAME", (schedule.LONGNAME == "") ? "[]" : schedule.LONGNAME);
+            comm.Connection = conn;
+            try
+            {
+                comm.ExecuteNonQuery();
+            }
+            catch (MySqlException err)
+            {
+                Console.WriteLine(err.ToString());
+                throw err;
+            }
+            conn.Dispose();
+            conn.Close();
+            return View();
+        }
+        [Route("/Add-UGCourse-Redirect")]
+        public IActionResult AddUGCourseRedirect(Course course)
+        {
+            Console.WriteLine(course.ToString());
+            using MySqlConnection conn = new(Utils.ConnectionString);
+            conn.Open();
+            MySqlCommand comm = conn.CreateCommand();
+            comm.CommandText = "INSERT INTO ugcatalog (AREA, ID, NAME, DESCRIPTION, CREDIT, PREREQ, REC) VALUES (?AREA, ?ID, ?NAME, ?DESCRIPTION, ?CREDIT, ?PREREQ, ?REC)";
+            comm.Connection = conn;
+            comm.Parameters.AddWithValue("?AREA", course.AREA);
+            comm.Parameters.AddWithValue("?ID", course.ID);
+            comm.Parameters.AddWithValue("?NAME", course.NAME);
+            comm.Parameters.AddWithValue("?DESCRIPTION", course.DESCRIPTION == "" ? "No description available." : course.DESCRIPTION);
+            comm.Parameters.AddWithValue("?CREDIT", course.CREDITS == "" ? null : course.CREDITS);
+            comm.Parameters.AddWithValue("?PREREQ", course.PREREQ == "" ? null : course.PREREQ);
+            comm.Parameters.AddWithValue("?REC", course.REC == "" ? null : course.REC);
+
+            comm.Connection = conn;
+            try
+            {
+                comm.ExecuteNonQuery();
+            }
+            catch (MySqlException err)
+            {
+                Console.WriteLine(err.ToString());
+                throw err;
+            }
+            conn.Dispose();
+            conn.Close();
+            return View(course);
+        }
+        [Route("/Add-Course-Redirect")]
+        public IActionResult AddCourseRedirect(Course course)
+        {
+            Console.WriteLine(course.ToString());
+            using MySqlConnection conn = new(Utils.ConnectionString);
+            conn.Open();
+            MySqlCommand comm = conn.CreateCommand();
+            comm.CommandText = "INSERT INTO catalog (AREA, ID, NAME, DESCRIPTION, CREDIT, PREREQ, REC) VALUES (?AREA, ?ID, ?NAME, ?DESCRIPTION, ?CREDIT, ?PREREQ, ?REC)";
+            comm.Connection = conn;
+            comm.Parameters.AddWithValue("?AREA", course.AREA);
+            comm.Parameters.AddWithValue("?ID", course.ID);
+            comm.Parameters.AddWithValue("?NAME", course.NAME);
+            comm.Parameters.AddWithValue("?DESCRIPTION", course.DESCRIPTION == "" ? "No description available." : course.DESCRIPTION);
+            comm.Parameters.AddWithValue("?CREDIT", course.CREDITS == "" ? null : course.CREDITS);
+            comm.Parameters.AddWithValue("?PREREQ", course.PREREQ == "" ? null : course.PREREQ);
+            comm.Parameters.AddWithValue("?REC", course.REC == "" ? null : course.REC);
+
+            comm.Connection = conn;
+            try
+            {
+                comm.ExecuteNonQuery();
+            }
+            catch (MySqlException err)
+            {
+                Console.WriteLine(err.ToString());
+                throw err;
+            }
+            conn.Dispose();
+            conn.Close();
+            return View(course);
+        }
+        [Route("/Administration")]
+        public IActionResult Administration()
+        {
+            return View(new Course());
+        }
+        [Route("/Add-Graduate-Sheet")]
+        public IActionResult AddGraduateSheet()
+        {
+            return View(new GraduateSchedule());
+        }
+        [Route("/Add-Graduate-Course")]
+        public IActionResult AddGraduateCourse()
+        {
+            return View(new Course());
+        }
+        [Route("/Add-Undergraduate-Course")]
+        public IActionResult AddUndergraduateCourse()
+        {
+            return View(new Course());
+        }
+        [Route("/General-Scheduling")]
+        public IActionResult GeneralScheduling()
+        {
+            return View();
         }
         [Route("/Undergraduate-Catalog")]
         public IActionResult UndergraduateCatalogView()
@@ -30,10 +143,42 @@ namespace Advising_Tool.Controllers
             return View();
         }
 
+        [Route("/Help")]
+        public IActionResult Help()
+        {
+            return View(new HelpMessage());
+        }
+        [Route("/Message-Submission")]
+        public IActionResult SubmitHelpMessage(HelpMessage Model)
+        {
+            using (MySqlConnection conn = new(Utils.ConnectionString))
+            {
+                conn.Open();
+                try
+                {
+                    MySqlCommand comm = conn.CreateCommand();
+                    comm.CommandText = "INSERT INTO helpmessages (timestamp, contents, whoami) VALUES (?time, ?msg, ?who)";
+                    comm.Connection = conn;
+                    comm.Parameters.AddWithValue("?time", Model.TIMESTAMP!);
+                    comm.Parameters.AddWithValue("?msg", Model.MESSAGE!);
+                    comm.Parameters.AddWithValue("?who", Model.NAME!);
+                    comm.ExecuteNonQuery();
+                }
+                catch (MySqlException)
+                {
+                }
+                finally
+                {
+                    conn.Dispose();
+                    conn.Close();
+                }
+            }
+            return View();
+        }
         [Route("/Undergraduate-Scheduling")]
         public IActionResult UndergraduateScheduling()
         {
-            return View(new GraduateRequest());
+            return View(new UndergraduateRequest());
         }
 
         [Route("/Graduate-Scheduling")]
@@ -42,13 +187,13 @@ namespace Advising_Tool.Controllers
             return View(new GraduateRequest());
         }
 
-        [Route("/Graduate-Schedule")]
-        public IActionResult GraduateRequest(GraduateRequest req)
+        [Route("/Undergraduate-Schedule")]
+        public IActionResult UndergraduateRequest(UndergraduateRequest req)
         {
             GraduateSchedule schedule = new();
             using (MySqlConnection con = new(Utils.ConnectionString))
             {
-                using MySqlCommand cmd = new("SELECT * FROM areas WHERE AREA='" + req.AREA!.Replace(" ", "") +"' AND DEGREE='" + req.TYPE!.Replace(" ", "") + "'");
+                using MySqlCommand cmd = new("SELECT * FROM areas WHERE AREA='" + req.AREA!.Replace(" ", "") + "' AND DEGREE='" + req.TYPE!.Replace(" ", "") + "'");
                 cmd.Connection = con;
                 con.Open();
                 using (MySqlDataReader sdr = cmd.ExecuteReader())
@@ -61,6 +206,35 @@ namespace Advising_Tool.Controllers
                         schedule.DEGREE = sdr["DEGREE"].ToString()!;
                         schedule.COURSES = sdr["COURSES"].ToString()!;
                         schedule.LONGNAME = req.NAME;
+                    }
+                }
+                con.Close();
+            }
+            return View(schedule);
+        }
+
+        [Route("/Graduate-Schedule")]
+        public IActionResult GraduateRequest(GraduateRequest req)
+        {
+            GraduateSchedule schedule = new();
+            using (MySqlConnection con = new(Utils.ConnectionString))
+            {
+                using MySqlCommand cmd = new("SELECT * FROM areas WHERE AREA='" + req.AREA!.Replace(" ", "") + "' AND DEGREE='" + req.TYPE!.Replace(" ", "") + "'");
+                cmd.Connection = con;
+                con.Open();
+                using (MySqlDataReader sdr = cmd.ExecuteReader())
+                {
+                    while (sdr.Read())
+                    {
+                        schedule.AREA = sdr["AREA"].ToString()!;
+                        schedule.DEGREE = sdr["DEGREE"].ToString()!;
+                        schedule.LONGNAME = sdr["LONGNAME"].ToString()!;
+                        schedule.COURSES = sdr["COURSES"].ToString()!;
+                        schedule.FINAL = sdr["FINAL"].ToString()!;
+                        schedule.ELECTIVE = sdr["ELECTIVE"].ToString()!;
+                        schedule.FOCUS = sdr["FOCUSELECT"].ToString()!;
+                        schedule.DEPTH = sdr["DEPTH"].ToString()!;
+                        schedule.NOTES = sdr["NOTES"].ToString()!;
                     }
                 }
                 con.Close();

@@ -70,6 +70,14 @@
                 <label class="selectedlabel">Selected Courses</label>
                 <div class="courseoptions">
                 </div>
+                <label class="prevlabel">Previously Taken Courses</label>
+                <div class="prevcourses">
+                    <div class="prevcourse">
+                        <button class="removeprev" onclick="removeParent(this)" disabled>-</button>
+                        <input type="text" />
+                        <button class="addnext" onclick="duplicateSelf(this)">+</button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="finalproj subarea" hidden>
@@ -129,7 +137,7 @@
                                                     }
                                                 </div>
                                                 <label class="descriptionlabel">Description</label>
-                                                <p class="description">@course.DESC</p>
+                                                <p class="description">@course.DESCRIPTION</p>
                                                 <div class="prerequisites">
                                                     @if (course.PREREQ!.Length > 0)
                                                     {
@@ -240,15 +248,7 @@
                                     JsonElement AREA = new(), ID = new();
                                     course.TryGetProperty("AREA", out AREA);
                                     course.TryGetProperty("ID", out ID);
-                                    Course courseQuery = new(null, null, null, null, null, null, null);
-                                    if (ID.ToString() == "")
-                                    {
-                                        courseQuery = new("", "Any graduate course in the " + AREA.ToString() + " area.", "", "", "", "[]", "[]");
-                                    }
-                                    else
-                                    {
-                                        courseQuery = GetCourseInfo(course.GetProperty("AREA").ToString(), course.GetProperty("ID").ToString());
-                                    }
+                                    Course courseQuery = GetCourseInfo(course.GetProperty("AREA").ToString(), course.GetProperty("ID").ToString());
                                     string[] credit = { "", "" };
                                     string creditString = "";
                                     if (courseQuery.CREDITS!.Contains('-'))
@@ -289,7 +289,7 @@
                                                 @creditString
                                             </div>
                                             <label class="descriptionlabel">Description</label>
-                                            <p class="description">@courseQuery.DESC</p>
+                                            <p class="description">@courseQuery.DESCRIPTION</p>
                                             <div class="prerequisites">
                                                 @if (courseQuery.PREREQ!.Length > 0)
                                                 {

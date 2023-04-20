@@ -3,17 +3,6 @@ namespace Advising_Tool.Models
 {
     public class Course
     {
-        public Course(string? aREA, string? iD, string? dESC, string? nAME, string? cREDITS, string? pREREQ, string? rEC)
-        {
-            AREA = aREA;
-            ID = iD;
-            DESC = dESC;
-            NAME = nAME;
-            CREDITS = cREDITS;
-            PREREQ = pREREQ;
-            REC = rEC;
-        }
-
         public string? AREA
         {
             get; set;
@@ -22,7 +11,7 @@ namespace Advising_Tool.Models
         {
             get; set;
         }
-        public string? DESC
+        public string? DESCRIPTION
         {
             get; set;
         }
@@ -44,7 +33,7 @@ namespace Advising_Tool.Models
         }
         public override string ToString()
         {
-            return AREA + ", " + ID + ", " + DESC + ", " + NAME + ", " + CREDITS + ", " + PREREQ;
+            return AREA + ", " + ID + ", " + DESCRIPTION + ", " + NAME + ", " + CREDITS + ", " + PREREQ;
         }
     }
 }

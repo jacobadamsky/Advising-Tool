@@ -5,6 +5,7 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Advising_Tool
 build_property.RootNamespace = Advising_Tool
@@ -14,6 +15,42 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\docto\Desktop\Online Advising Tool\Advising Tool\Advising Tool
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/AddCourseRedirect.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRDb3Vyc2VSZWRpcmVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/AddGraduateCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRHcmFkdWF0ZUNvdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/AddGraduateSheet.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRHcmFkdWF0ZVNoZWV0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/AddGraduateSheetRedirect.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRHcmFkdWF0ZVNoZWV0UmVkaXJlY3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/AddUGCourseRedirect.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRVR0NvdXJzZVJlZGlyZWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/AddUndergraduateCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRVbmRlcmdyYWR1YXRlQ291cnNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/AddUndergraduateSheet.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRVbmRlcmdyYWR1YXRlU2hlZXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/Administration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pbmlzdHJhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/GeneralScheduling.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZW5lcmFsU2NoZWR1bGluZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/GraduateCatalogView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHcmFkdWF0ZUNhdGFsb2dWaWV3LmNzaHRtbA==
@@ -27,6 +64,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHcmFkdWF0ZVNjaGVkdWxpbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/Help.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIZWxwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -35,8 +76,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/SubmitHelpMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdWJtaXRIZWxwTWVzc2FnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/UndergraduateCatalogView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVbmRlcmdyYWR1YXRlQ2F0YWxvZ1ZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/UndergraduateRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVbmRlcmdyYWR1YXRlUmVxdWVzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/docto/Desktop/Online Advising Tool/Advising Tool/Advising Tool/Views/Home/UndergraduateScheduling.cshtml]

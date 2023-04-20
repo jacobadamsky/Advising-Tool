@@ -28,6 +28,9 @@
         <button class="sidebtn" onclick="location.href = '/Graduate-Catalog'">Graduate Catalog</button>
         <button class="sidebtn" onclick="location.href = '/Undergraduate-Scheduling'">Undergraduate Scheduling</button>
         <button class="sidebtn" onclick="location.href = '/Undergraduate-Catalog'">Undergraduate Catalog</button>
+        <button class="sidebtn" onclick="location.href = '/General-Scheduling'">General Scheduling</button>
+        <button class="sidebtn" onclick="location.href = '/Administration'">Administration</button>
+        <button class="sidebtn" onclick="location.href = '/Help'">Help</button> 
     </div>
     <main role="main" class="pb-3">
         @RenderBody()
@@ -35,7 +38,6 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 <script>

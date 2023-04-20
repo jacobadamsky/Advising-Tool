@@ -1,4 +1,5 @@
-﻿@using MySql.Data.MySqlClient
+﻿@using Advising_Tool.Views.Home;
+@using MySql.Data.MySqlClient
 @using System.Text.RegularExpressions
 @using static Advising_Tool.Views.Home.Functions
 
@@ -7,9 +8,8 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
-@functions {
-    public Dictionary<string, string> gradOptions = GetGraduateOptions();
+@functions{
+    public TripleEnumerable<string, string, string> gradOptions = GetGraduateOptions();
 }
 
 <head>
@@ -24,51 +24,22 @@
                 <div>
                     <strong>Area of Study</strong><br />
                     <select asp-for="AREA" id="aos" onclick="changeDegree(); updateLongName();">
-                        @foreach (KeyValuePair<string, string> pair in gradOptions)
+                        @foreach (Triple<string, string, string> triple in gradOptions)
                         {
-                            <option value=@pair.Key>@GetStudyAreaName(pair.Key) (@pair.Key)</option>
+                            <option value=@triple.GetFirst()>@triple.GetThird() (@triple.GetFirst())</option>
                         }
                     </select>
                     <span asp-validation-for="AREA" class="text-danger"></span>
                 </div>
 
-
                 <div>
                     <label><b>Degree Options</b></label>
                     <select asp-for="TYPE" id="type" onclick="updateLongName();">
-                        @foreach (KeyValuePair<string, string> pair in gradOptions)
+                        @foreach (Triple<string, string, string> triple in gradOptions)
                         {
-                            string[] degrees = pair.Value.Split(",");
-                            foreach (string str in degrees)
-                            {
-                                string trim = Regex.Replace(str, @"[\[\]\{\}]+", "").Replace("\"", "");
-                                string[] keyval = trim.Split(": ");
-                                keyval[0] = keyval[0].Replace(" ", "");
-                                if (pair.Key == "AE")
-                                {
-                                    <option id=@pair.Key value=@keyval[0] class="degsel">@keyval[1]</option>
-                                }
-                                else
-                                {
-                                    <option id=@pair.Key value=@keyval[0] hidden class="degsel">@keyval[1]</option>
-                                }
-                            }
+                            <option value=@triple.GetFirst()>@GetStudyAreaName(triple.GetThird()) (@triple.GetSecond())</option>
                         }
                     </select>
-                </div>
-
-
-                <div>
-                    <select asp-for="NAME" id="name" onclick="updateLongName();" hidden>
-                        @foreach (KeyValuePair<string, string> pair in gradOptions)
-                        {
-                            @foreach (string str in pair.Value.Replace("[", "").Replace("]", "").Split(","))
-                            {
-                                KeyValuePair<string, string> degree = ParsePair(str);
-                                <option id=@degree.Key value=@degree.Value class=@pair.Key>@degree.Value</option>
-                            }}
-                    </select>
-                    <span asp-validation-for="NAME" class="text-danger"></span>
                 </div>
             </div>
         </div>

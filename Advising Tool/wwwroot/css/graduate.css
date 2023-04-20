@@ -54,9 +54,3 @@ body {
 select {
     width: 350px;
 }
-
-button {
-    margin-top: 30px;
-    border-radius: 5px;
-    border-width: 1px;
-}

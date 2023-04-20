@@ -4,6 +4,15 @@ window.addEventListener("load", function (e) {
     list = document.querySelector(".scheduleyear").querySelectorAll(".year");
 }, false);
 
+function removeParent(element) {
+    element.parentElement.remove();
+}
+function duplicateSelf(element) {
+    var copy = element.parentElement.cloneNode(true);
+    copy.querySelector(".removeprev").disabled = false;
+    element.parentElement.parentElement.appendChild(copy);
+}
+
 function selectUpTo(str, key) {
     var match = "";
     for (let i = 0; i < str.length; i++) {
@@ -138,6 +147,11 @@ function addSelectedCourse(element) {
     var courses = [];
     options.querySelectorAll(".course").forEach(course => {
         var header = course.querySelector(".courseheader");
+        var prevCourses = [];
+        document.querySelectorAll(".prevcourse").forEach(prev => {
+            prevCourses.push(prev.querySelector("input").value);
+        });
+        console.log(prevCourses)
         if (header.getAttribute("active") === "true") {
             if (course.dataset.prereq !== "" && course.dataset.prereq !== undefined) {
                 var semDiv = document.querySelectorAll(".semestercourses");
@@ -151,22 +165,21 @@ function addSelectedCourse(element) {
                         });
                     }
                 }
-                if (courses.length == 0) {
-                    header.setAttribute("active", "false");
-                    alert("Prerequisite requirement not met for this course.");
-                    return;
-                }
                 var validCourses = [];
                 for (const courseGroup of prereq) {
                     var groupValid = false;
                     for (const subcourse of courseGroup) {
                         for (const val of courses) {
                             var str = (subcourse.AREA + subcourse.ID);
-                            if (val.id == str) {
+                            if (val.id === str) {
                                 groupValid = true;
                                 validCourses.push(val);
                                 break;
                             }
+                        }
+                        if (prevCourses.includes(subcourse.AREA + subcourse.ID)) {
+                            groupValid = true;
+                            break;
                         }
                     }
                     if (groupValid === false) {

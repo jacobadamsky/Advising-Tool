@@ -173,7 +173,7 @@ main {
     cursor: pointer;
     border-radius: 7px;
     background: red;
-    padding: 4px 7px;
+    padding: 0px 7px;
 }
 
 .courseselection {
@@ -253,6 +253,37 @@ main {
 }
 
 /*Scheduling CSS*/
+.prevcourse {
+    display: inline-flex;
+    margin-bottom:10px;
+}
+
+    .prevcourse .removeprev {
+        text-align:center;
+        font-weight:800;
+        border: unset;
+        width: 30px;
+        height: stretch;
+        background: red;
+        margin-left: 20px;
+        border-start-start-radius: 8px;
+        border-end-start-radius: 8px;
+    }
+
+    .prevcourse .addnext {
+        text-align: center;
+        font-weight: 800;
+        border: unset;
+        width: 30px;
+        height: stretch;
+        background: green;
+        border-end-end-radius: 8px;
+        border-start-end-radius: 8px;
+    } 
+    .prevcourse .removeprev:disabled{
+        background: #ff1c1c;
+    }
+
 .download {
     border: none;
     border-left: 2px solid gray;
@@ -363,7 +394,7 @@ main {
     display: grid;
 }
 
-.selectedlabel {
+.selectedlabel, .prevlabel {
     user-select: none;
     height: min-content;
     padding: 6px 10px 6px 10px;

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YNB5nfyWJt8Ye8idnLs+6sH9VS9f+XTs2Ne5TZ1Iido=",
+  "Hash": "qVKEhKF+5la/1K+Ul6iC4iUjixTr/PrZRiZMZYjmN4c=",
   "Source": "Advising Tool",
   "BasePath": "_content/Advising Tool",
   "Mode": "Default",
@@ -51,6 +51,57 @@
       "OriginalItemSpec": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Advising Tool.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\css\\addgradcourse.css",
+      "SourceId": "Advising Tool",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\",
+      "BasePath": "_content/Advising Tool",
+      "RelativePath": "css/addgradcourse.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\addgradcourse.css"
+    },
+    {
+      "Identity": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\css\\addgradsheet.css",
+      "SourceId": "Advising Tool",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\",
+      "BasePath": "_content/Advising Tool",
+      "RelativePath": "css/addgradsheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\addgradsheet.css"
+    },
+    {
+      "Identity": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\css\\admin.css",
+      "SourceId": "Advising Tool",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\",
+      "BasePath": "_content/Advising Tool",
+      "RelativePath": "css/admin.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\admin.css"
+    },
+    {
       "Identity": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\css\\app.css",
       "SourceId": "Advising Tool",
       "SourceType": "Discovered",
@@ -85,6 +136,23 @@
       "OriginalItemSpec": "wwwroot\\css\\catalog.css"
     },
     {
+      "Identity": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\css\\gensched.css",
+      "SourceId": "Advising Tool",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\",
+      "BasePath": "_content/Advising Tool",
+      "RelativePath": "css/gensched.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\gensched.css"
+    },
+    {
       "Identity": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\css\\gradreq.css",
       "SourceId": "Advising Tool",
       "SourceType": "Discovered",
@@ -117,6 +185,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\graduate.css"
+    },
+    {
+      "Identity": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\css\\help.css",
+      "SourceId": "Advising Tool",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\",
+      "BasePath": "_content/Advising Tool",
+      "RelativePath": "css/help.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\help.css"
     },
     {
       "Identity": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\css\\home.css",
@@ -187,6 +272,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\js\\genscript.js",
+      "SourceId": "Advising Tool",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\",
+      "BasePath": "_content/Advising Tool",
+      "RelativePath": "js/genscript.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\genscript.js"
+    },
+    {
       "Identity": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\js\\gradscript.js",
       "SourceId": "Advising Tool",
       "SourceType": "Discovered",
@@ -204,12 +306,12 @@
       "OriginalItemSpec": "wwwroot\\js\\gradscript.js"
     },
     {
-      "Identity": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\js\\gradsheet.js",
       "SourceId": "Advising Tool",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\",
       "BasePath": "_content/Advising Tool",
-      "RelativePath": "js/site.js",
+      "RelativePath": "js/gradsheet.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -218,7 +320,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\site.js"
+      "OriginalItemSpec": "wwwroot\\js\\gradsheet.js"
+    },
+    {
+      "Identity": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\js\\temp.json",
+      "SourceId": "Advising Tool",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\",
+      "BasePath": "_content/Advising Tool",
+      "RelativePath": "js/temp.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\temp.json"
     },
     {
       "Identity": "C:\\Users\\docto\\Desktop\\Online Advising Tool\\Advising Tool\\Advising Tool\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

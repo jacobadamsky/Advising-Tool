@@ -11,13 +11,9 @@ namespace Advising_Tool.Models
         {
             get; set;
         }
-        public string? NAME
-        {
-            get; set;
-        }
         public override string ToString()
         {
-            return "Area: " + AREA! + ", Type: " + TYPE! + ", Name: " + NAME!;
+            return "Area: " + AREA! + ", Type: " + TYPE!;
         }
     }
 }

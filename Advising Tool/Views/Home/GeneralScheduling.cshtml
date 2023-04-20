@@ -1,0 +1,138 @@
+﻿@using MySql.Data.MySqlClient
+@using System.Text.Json
+@using static Advising_Tool.Views.Home.Functions
+
+<head>
+    <script src="~/js/genscript.js"></script>
+    <link rel="stylesheet" href="~/css/gensched.css" asp-append-version="true" />
+    <link rel="icon" href="./favicon.ico" />
+    <title>General Scheduling</title>
+</head>
+<body>
+    <div class="butselbar">
+        <div class="butsel active" selected="false" onclick="toggleActiveAttribute(this); window.document.title = 'General Scheduling - Course Selection';">
+            Course Selection
+        </div>
+        <div class="butsel" selected="false" onclick="toggleActiveAttribute(this); window.document.title = 'General Scheduling - Selected Courses';">
+            Selected Courses
+        </div>
+    </div>
+    <div class="selectedcourses" hidden>
+        <div class="courseoptions"></div>
+    </div>
+    <div class="courseselection">
+        <input class="filter" type="text" oninput="filterCourses(this)" placeholder="Search for a course" />
+        <div class="courses">
+            @foreach (Course course in GetCatalog())
+            {
+                string AREA = course.AREA!, ID = course.ID!;
+                <div class="course" id="@course.AREA@course.ID">
+                    <div class="courseheader" onclick="toggleCourseInfo(this)">
+                        <input class="coursecheckbox" type="checkbox" oninput="modifyCourseScheduling(this)" onclick="event.stopPropagation();" />
+                        <label class="courselabel">
+                            @course.AREA @course.ID - @course.NAME
+                        </label>
+                    </div>
+                    <div class="courseinfo" hidden>
+                        <div class="creditlabel">
+                            @if (course.CREDITS!.Trim().Length == 0)
+                            {
+                                <text>Credits: TBD</text>
+                            }
+                            else
+                            {
+                                <text>Credits: @course.CREDITS</text>
+                            }
+                        </div>
+                        <label class="descriptionlabel">Description</label>
+                        <p class="description">@course.DESCRIPTION</p>
+                        <div class="prerequisites">
+                            @if (course.PREREQ!.Length > 0)
+                            {
+                                <label class="prereqlabel">Prerequisites</label>
+                                <br />
+                                <div class="prereqdiv">
+                                    @foreach (JsonElement prereq in ParseJson<JsonElement>(course.PREREQ).EnumerateArray())
+                                    {
+                                        if (prereq.GetArrayLength() > 1)
+                                        {
+                                            foreach (JsonElement prereqCourse in prereq.EnumerateArray())
+                                            {
+                                                if (prereqCourse.ToString() == prereq.EnumerateArray().Last().ToString())
+                                                {
+                                                    <text> or @prereqCourse.GetProperty("AREA") @prereqCourse.GetProperty("ID")</text>
+                                                }
+                                                else
+                                                {
+                                                    if (prereq.EnumerateArray().Count() == 2)
+                                                    {
+                                                        <text>@prereqCourse.GetProperty("AREA") @prereqCourse.GetProperty("ID")</text>
+                                                    }
+                                                    else
+                                                    {
+                                                        <text>@prereqCourse.GetProperty("AREA") @prereqCourse.GetProperty("ID"), </text>
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <text>@prereq[0].GetProperty("AREA") @prereq[0].GetProperty("ID")</text>
+                                        }
+                                        <br />
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <label class="prereqlabel">No Prerequisites</label>
+                            }
+                        </div>
+                        <div class="recommended">
+                            @if (course.REC!.Length > 0)
+                            {
+                                <label class="reclabel">Recommended Background</label>
+                                <br />
+                                <div class="recdiv">
+                                    @foreach (JsonElement rec in ParseJson<JsonElement>(course.REC).EnumerateArray())
+                                    {
+                                        if (rec.GetArrayLength() > 1)
+                                        {
+                                            foreach (JsonElement recCourse in rec.EnumerateArray())
+                                            {
+                                                if (recCourse.ToString() == rec.EnumerateArray().Last().ToString())
+                                                {
+                                                    <text> or @recCourse.GetProperty("AREA") @recCourse.GetProperty("ID")</text>
+                                                }
+                                                else
+                                                {
+                                                    if (rec.EnumerateArray().Count() == 2)
+                                                    {
+                                                        <text>@recCourse.GetProperty("AREA") @recCourse.GetProperty("ID")</text>
+                                                    }
+                                                    else
+                                                    {
+                                                        <text>@recCourse.GetProperty("AREA") @recCourse.GetProperty("ID"), </text>
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <text>@rec[0].GetProperty("AREA") @rec[0].GetProperty("ID")</text>
+                                        }
+                                        <br />
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <label class="reclabel">No Recommended Background</label>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
