@@ -11,19 +11,19 @@ namespace Advising_Tool.Views.Home
         {
             return JsonSerializer.Deserialize<T>(str)!;
         }
-        public static Dictionary<string, string> GetUndergraduateOptions()
+        public static TripleEnumerable<string, string, string> GetUndergraduateOptions()
         {
-            Dictionary<string, string> retList = new();
+            TripleEnumerable<string, string, string> retList = new();
             using (MySqlConnection con = new(Utils.ConnectionString))
             {
-                using MySqlCommand cmd = new("SELECT AREA, LONGNAME FROM ugareas");
+                using MySqlCommand cmd = new("SELECT AREA, LONGNAME, DEGREE FROM ugareas");
                 cmd.Connection = con;
                 con.Open();
                 using (MySqlDataReader sdr = cmd.ExecuteReader())
                 {
                     while (sdr.Read())
                     {
-                        retList.Add(sdr["AREA"].ToString()!, sdr["LONGNAME"].ToString()!);
+                        retList.Add(sdr["AREA"].ToString()!, sdr["DEGREE"].ToString()!, sdr["LONGNAME"].ToString()!);
                     }
                 }
                 con.Close();

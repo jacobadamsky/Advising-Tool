@@ -35,6 +35,10 @@ namespace Advising_Tool.Models
         {
             get; set;
         }
+        public string? SPECIALTY
+        {
+            get; set;
+        }
         public string? NOTES
         {
             get; set;

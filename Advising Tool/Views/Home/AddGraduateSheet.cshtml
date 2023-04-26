@@ -9,7 +9,7 @@
 <body>
     <label class="mainlabel">Enter Tracking Sheet Information</label>
     <div class="sheetsubmit">
-        <form asp-action="AddGraduateSheetRedirect" class="form" onchange="updateCourses(); updateFinal(); setElective(); updateFocusInput(); updateDepth();">
+        <form asp-action="AddGraduateSheetRedirect" class="form" onchange="updateCourses(); updateFinal(); setElective(); updateFocusInput(); updateDepth(); updateSpecial();">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="info">
                 <div class="area">
@@ -99,15 +99,37 @@
                         </div>
                         <div class="depthsects">
                         </div>
-                        <input class="depthinput" asp-for="DEPTH"  />
+                        <input class="depthinput" asp-for="DEPTH" hidden />
                         <span asp-validation-for="DEPTH" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="spacer2"></div>
+                <div class="subsection">
+                    <div class="specialsection">
+                        <label class="sect">Speciality Selection</label>
+                        <div class="numselect">
+                            <label><b># of Sections: </b></label>
+                            <input type="number" />
+                        </div>
+                        <div class="buttons">
+                            <button type="button" onclick="addSpecialArea()">Add Specialty Area</button>
+                            <button type="button" onclick="removeSpecialArea()">Remove Specialty Area</button>
+                        </div>
+                        <div class="specialtysects">
+                        </div>
+                        <input class="specialinput" asp-for="SPECIALTY" hidden />
+                        <span asp-validation-for="SPECIALTY" class="text-danger"></span>
+                    </div>
+                    <div class="spacer2"></div>
+                    <div class="notessection">
+                        <label class="sect">Notes</label>
+                        <textarea class="notesinput resize-ta" asp-for="NOTES" onkeydown="this.style.height = ((this.scrollHeight) + 'px')"></textarea>
+                        <span asp-validation-for="NOTES" class="text-danger"></span>
                     </div>
                 </div>
             </div>
             <button type="submit" class="realsubmit" hidden></button>
         </form>
-        <input class="notesinput" asp-for="NOTES" />
-        <span asp-validation-for="NOTES" class="text-danger"></span>
         <button type="submit" class="button" onclick="document.querySelector('.realsubmit').click()">Submit</button>
     </div>
 </body>

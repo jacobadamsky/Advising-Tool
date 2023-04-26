@@ -1,4 +1,5 @@
-﻿@using MySql.Data.MySqlClient
+﻿@using Advising_Tool.Views.Home;
+@using MySql.Data.MySqlClient
 @using System.Text.RegularExpressions
 @using static Advising_Tool.Views.Home.Functions
 
@@ -9,109 +10,90 @@
 }
 
 @functions {
-    public Dictionary<string, string> undergradOptions = GetUndergraduateOptions();
+    public TripleEnumerable<string, string, string> gradOptions = GetUndergraduateOptions();
+    public Dictionary<string, string> DegreeOptions()
+    {
+        Dictionary<string, string> ret = new();
+        foreach (var obj in gradOptions)
+        {
+            if (!ret.Keys.Contains(obj.GetFirst()))
+            {
+                ret.Add(obj.GetFirst(), GetStudyAreaName(obj.GetFirst()));
+            }
+        }
+        return ret;
+    }
 }
 
 <head>
     <link rel="stylesheet" href="~/css/graduate.css" asp-append-version="true" />
     <link rel="icon" href="./favicon.ico" />
 </head>
-<body onload="showDegree(); updateSelect();">
-    <form asp-action="UndergraduateRequest" class="form-horizontal" onchange="showDegree(); updateSelect(); updateLongName();">
+<body>
+    <form asp-action="UndergraduateRequest" class="form-horizontal">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group">
-            <div class="scheduling">
-                <div>
-                    <strong>Area of Study</strong><br />
-                    <select asp-for="AREA" id="aos" onclick="changeDegree(); updateLongName();">
-                        @foreach (KeyValuePair<string, string> pair in undergradOptions)
-                        {
-                            <option value=@pair.Key>@GetStudyAreaName(pair.Key) (@pair.Key)</option>
-                        }
-                    </select>
-                    <span asp-validation-for="AREA" class="text-danger"></span>
-                </div>
-                <div>
-                    <label><b>Degree Options</b></label>
-                    <select asp-for="TYPE" id="type" onclick="updateLongName();">
-                        @foreach (KeyValuePair<string, string> pair in undergradOptions)
-                        {
-                            string[] degrees = pair.Value.Split(",");
-                            foreach (string str in degrees)
-                            {
-                                string trim = Regex.Replace(str, @"[\[\]\{\}]+", "").Replace("\"", "");
-                                string[] keyval = trim.Split(": ");
-                                keyval[0] = keyval[0].Replace(" ", "");
-                                if (pair.Key == "AE")
-                                {
-                                    <option id=@pair.Key value=@keyval[0] class="degsel">@keyval[1]</option>
-                                }
-                                else
-                                {
-                                    <option id=@pair.Key value=@keyval[0] hidden class="degsel">@keyval[1]</option>
-                                }
-                            }
-                        }
-                    </select>
-                </div>
-                <div>
-                    <select asp-for="NAME" id="name" onclick="updateLongName();" hidden>
-                        @foreach (KeyValuePair<string, string> pair in undergradOptions)
-                        {
-                            @foreach (string str in pair.Value.Replace("[", "").Replace("]", "").Split(","))
-                            {
-                                KeyValuePair<string, string> degree = ParsePair(str);
-                                <option id=@degree.Key value=@degree.Value class=@pair.Key>@degree.Value</option>
-                            }}
-                    </select>
-                    <span asp-validation-for="NAME" class="text-danger"></span>
-                </div>
+        <div class="scheduling">
+            <label><b>Area of Study</b></label>
+            <div>
+                <select asp-for="AREA" id="aos" onchange="switchDegree();">
+                    @foreach (var val in DegreeOptions())
+                    {
+                        <option value=@val.Key>@val.Value (@val.Key)</option>
+                    }
+                </select>
             </div>
+            <label><b>Degree Options</b></label>
+            <div>
+                <select asp-for="TYPE" id="type">
+                    @foreach (Triple<string, string, string> triple in gradOptions)
+                    {
+                        <option value=@triple.GetSecond() data-area=@triple.GetFirst()>@triple.GetThird()</option>
+                    }
+                </select>
+            </div>
+            <button id="submit" type="submit">SUBMIT</button>
         </div>
-        <button id="submit" type="submit">SUBMIT</button>
     </form>
 </body>
 <script>
-    function updateLongName() {
-        var degId = document.querySelector("#type").value;
+    window.addEventListener("load", function () {
+        switchDegree();
+
+    }, false);
+    function switchDegree() {
         var area = document.querySelector("#aos").value;
-        document.querySelector("#name").querySelectorAll("option").forEach(t => {
-            if (t.id === degId && t.className === area) {
-                t.selected = true;
-            }
-        })
-    }
-    function showDegree() {
-        document.querySelectorAll(".sect").forEach(t => {
-            t.hidden = "true";
-            if (t.id === document.getElementById("aos").value) {
-                t.hidden = false;
-            }
-            var index = 0;
-            t.querySelectorAll("select").forEach(k => {
-                if (k.id === "type" && !k.hidden) {
-                    index = k.selectedIndex;
-                }
-            })
-            t.selectedIndex = index;
-        });
-    }
-    function updateSelect() {
-        var val = document.querySelector("#aos").value;
-        document.querySelector("#type").querySelectorAll("option").forEach(t => {
-            if (t.id !== val) {
-                t.hidden = true;
+        var first = true;
+        document.querySelector("#type").querySelectorAll("option").forEach(option => {
+            if (option.dataset.area !== area) {
+                option.hidden = true;
             } else {
-                t.hidden = false;
+                if (first) {
+                    option.selected = true;
+                    first = false;
+                }
+                option.hidden = false;
             }
         });
     }
-    function changeDegree() {
-        document.querySelector("#type").querySelectorAll("option").forEach(t => {
-            if (!t.hidden) {
-                t.selected = true;
-                return;
-            }
-        });
+    const gcd = (a, b) => {
+        let num = 2, res = 1;
+        while (num <= Math.min(a, b)) {
+            if (a % num === 0 && b % num === 0) {
+                res = num;
+            };
+            num++;
+        };
+        return res;
     }
+    const sumFrac = (a, b) => {
+        const aDenom = a[1], aNumer = a[0];
+        const bDenom = b[1], bNumer = b[0];
+        let resDenom = aDenom * bDenom;
+        let resNumer = (aDenom * bNumer) + (bDenom * aNumer);
+        const greatestDivisor = gcd(resDenom, resNumer);
+        return [resNumer / greatestDivisor, resDenom / greatestDivisor];
+    };
+    const sumArrayOfFractions = (arr) => {
+        return arr.reduce((acc, val) => sumFrac(acc, val));
+    };
 </script>

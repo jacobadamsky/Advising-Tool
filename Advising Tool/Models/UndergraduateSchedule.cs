@@ -27,5 +27,21 @@ namespace Advising_Tool.Models
         {
             get; set;
         }
+        public string? FOCUS
+        {
+            get; set;
+        }
+        public string? DEPTH
+        {
+            get; set;
+        }
+        public string? SPECIALTY
+        {
+            get; set;
+        }
+        public string? NOTES
+        {
+            get; set;
+        }
     }
 }

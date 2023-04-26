@@ -8,85 +8,71 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-@functions{
+
+@functions {
     public TripleEnumerable<string, string, string> gradOptions = GetGraduateOptions();
+    public Dictionary<string, string> DegreeOptions()
+    {
+        Dictionary<string, string> ret = new();
+        foreach (var obj in gradOptions)
+        {
+            if (!ret.Keys.Contains(obj.GetFirst()))
+            {
+                ret.Add(obj.GetFirst(), GetStudyAreaName(obj.GetFirst()));
+            }
+        }
+        return ret;
+    }
 }
 
 <head>
     <link rel="stylesheet" href="~/css/graduate.css" asp-append-version="true" />
     <link rel="icon" href="./favicon.ico" />
 </head>
-<body onload="showDegree(); updateSelect();">
+<body>
     <form asp-action="GraduateRequest" class="form-horizontal" onchange="showDegree(); updateSelect(); updateLongName();">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group">
-            <div class="scheduling">
-                <div>
-                    <strong>Area of Study</strong><br />
-                    <select asp-for="AREA" id="aos" onclick="changeDegree(); updateLongName();">
-                        @foreach (Triple<string, string, string> triple in gradOptions)
-                        {
-                            <option value=@triple.GetFirst()>@triple.GetThird() (@triple.GetFirst())</option>
-                        }
-                    </select>
-                    <span asp-validation-for="AREA" class="text-danger"></span>
-                </div>
-
-                <div>
-                    <label><b>Degree Options</b></label>
-                    <select asp-for="TYPE" id="type" onclick="updateLongName();">
-                        @foreach (Triple<string, string, string> triple in gradOptions)
-                        {
-                            <option value=@triple.GetFirst()>@GetStudyAreaName(triple.GetThird()) (@triple.GetSecond())</option>
-                        }
-                    </select>
-                </div>
+        <div class="scheduling">
+            <label><b>Area of Study</b></label>
+            <div>
+                <select asp-for="AREA" id="aos" onchange="switchDegree();">
+                    @foreach (var val in DegreeOptions())
+                    {
+                        <option value=@val.Key>@val.Value (@val.Key)</option>
+                    }
+                </select>
             </div>
+            <label><b>Degree Options</b></label>
+            <div>
+                <select asp-for="TYPE" id="type">
+                    @foreach (Triple<string, string, string> triple in gradOptions)
+                    {
+                        <option value=@triple.GetSecond() data-area=@triple.GetFirst()>@triple.GetThird()</option>
+                    }
+                </select>
+            </div>
+            <button id="submit" type="submit">SUBMIT</button>
         </div>
-        <button id="submit" type="submit">SUBMIT</button>
     </form>
 </body>
 <script>
-    function updateLongName() {
-        var degId = document.querySelector("#type").value;
+    window.addEventListener("load", function () {
+        switchDegree();
+
+    }, false);
+    function switchDegree() {
         var area = document.querySelector("#aos").value;
-        document.querySelector("#name").querySelectorAll("option").forEach(t => {
-            if (t.id === degId && t.className === area) {
-                t.selected = true;
-            }
-        })
-    }
-    function showDegree() {
-        document.querySelectorAll(".sect").forEach(t => {
-            t.hidden = "true";
-            if (t.id === document.getElementById("aos").value) {
-                t.hidden = false;
-            }
-            var index = 0;
-            t.querySelectorAll("select").forEach(k => {
-                if (k.id === "type" && !k.hidden) {
-                    index = k.selectedIndex;
-                }
-            })
-            t.selectedIndex = index;
-        });
-    }
-    function updateSelect() {
-        var val = document.querySelector("#aos").value;
-        document.querySelector("#type").querySelectorAll("option").forEach(t => {
-            if (t.id !== val) {
-                t.hidden = true;
+        var first = true;
+        document.querySelector("#type").querySelectorAll("option").forEach(option => {
+            if (option.dataset.area !== area) {
+                option.hidden = true;
             } else {
-                t.hidden = false;
+                if (first) {
+                    option.selected = true;
+                    first = false;
+                }
+                option.hidden = false;
             }
-        })
-    }
-    function changeDegree() {
-        document.querySelector("#type").querySelectorAll("option").forEach(t => {
-            if (!t.hidden) {
-                t.selected = true;
-                return;
-            }
-        })
+        });
     }
 </script>

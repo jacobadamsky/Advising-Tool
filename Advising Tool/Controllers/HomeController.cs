@@ -9,22 +9,54 @@ namespace Advising_Tool.Controllers
     public class HomeController : Controller
     {
         [Route("/Add-UGSheet-Redirect")]
+        public IActionResult AddUndergraduateSheetRedirect(UndergraduateSchedule schedule)
+        {
+            Console.WriteLine(schedule.COURSES);
+            using MySqlConnection conn = new(Utils.ConnectionString);
+            conn.Open();
+            MySqlCommand comm = conn.CreateCommand();
+            comm.CommandText = "INSERT INTO ugareas (AREA, DEGREE, COURSES, FINAL, ELECTIVE, NOTES, LONGNAME) VALUES (?AREA, ?DEGREE, ?COURSES, ?FINAL, ?ELECTIVE, ?NOTES, ?LONGNAME)";
+            comm.Connection = conn;
+            comm.Parameters.AddWithValue("?AREA", (schedule.AREA == "") ? null : schedule.AREA);
+            comm.Parameters.AddWithValue("?DEGREE", (schedule.DEGREE == "") ? null : schedule.DEGREE);
+            comm.Parameters.AddWithValue("?COURSES", (schedule.COURSES == "") ? "" : schedule.COURSES);
+            comm.Parameters.AddWithValue("?FINAL", (schedule.FINAL == "") ? "" : schedule.FINAL);
+            comm.Parameters.AddWithValue("?ELECTIVE", (schedule.ELECTIVE == "") ? "" : schedule.ELECTIVE);
+            comm.Parameters.AddWithValue("?NOTES", (schedule.NOTES == "") ? "" : schedule.NOTES);
+            comm.Parameters.AddWithValue("?LONGNAME", (schedule.LONGNAME == "") ? "" : schedule.LONGNAME);
+            comm.Connection = conn;
+            try
+            {
+                comm.ExecuteNonQuery();
+            }
+            catch (MySqlException err)
+            {
+                Console.WriteLine(err.ToString());
+                throw err;
+            }
+            conn.Dispose();
+            conn.Close();
+            return View();
+        }
+        [Route("/Add-Sheet-Redirect")]
         public IActionResult AddGraduateSheetRedirect(GraduateSchedule schedule)
         {
             Console.WriteLine(schedule.COURSES);
             using MySqlConnection conn = new(Utils.ConnectionString);
             conn.Open();
             MySqlCommand comm = conn.CreateCommand();
-            comm.CommandText = "INSERT INTO areas (AREA, DEGREE, COURSES, FINAL, ELECTIVE, DEPTH, NOTES, LONGNAME) VALUES (?AREA, ?DEGREE, ?COURSES, ?FINAL, ?ELECTIVE, ?DEPTH, ?NOTES, ?LONGNAME)";
+            comm.CommandText = "INSERT INTO areas (AREA, DEGREE, COURSES, FINAL, ELECTIVE, DEPTH, NOTES, LONGNAME, FOCUSELECT, SPECIALTY) VALUES (?AREA, ?DEGREE, ?COURSES, ?FINAL, ?ELECTIVE, ?DEPTH, ?NOTES, ?LONGNAME, ?FOCUS, ?SPECIALTY)";
             comm.Connection = conn;
             comm.Parameters.AddWithValue("?AREA", (schedule.AREA == "") ? null : schedule.AREA);
             comm.Parameters.AddWithValue("?DEGREE", (schedule.DEGREE == "") ? null : schedule.DEGREE);
-            comm.Parameters.AddWithValue("?COURSES", (schedule.COURSES == "") ? "[]" : schedule.COURSES);
-            comm.Parameters.AddWithValue("?FINAL", (schedule.FINAL == "") ? "[]" : schedule.FINAL);
-            comm.Parameters.AddWithValue("?ELECTIVE", (schedule.ELECTIVE == "") ? "[]" : schedule.ELECTIVE);
-            comm.Parameters.AddWithValue("?DEPTH", (schedule.DEPTH == "") ? "[]" : schedule.DEPTH);
-            comm.Parameters.AddWithValue("?NOTES", (schedule.NOTES == "") ? "[]" : schedule.NOTES);
-            comm.Parameters.AddWithValue("?LONGNAME", (schedule.LONGNAME == "") ? "[]" : schedule.LONGNAME);
+            comm.Parameters.AddWithValue("?COURSES", (schedule.COURSES == "") ? "" : schedule.COURSES);
+            comm.Parameters.AddWithValue("?FINAL", (schedule.FINAL == "") ? "" : schedule.FINAL);
+            comm.Parameters.AddWithValue("?ELECTIVE", (schedule.ELECTIVE == "") ? "" : schedule.ELECTIVE);
+            comm.Parameters.AddWithValue("?DEPTH", (schedule.DEPTH == "") ? "" : schedule.DEPTH);
+            comm.Parameters.AddWithValue("?NOTES", (schedule.NOTES == "") ? "" : schedule.NOTES);
+            comm.Parameters.AddWithValue("?LONGNAME", (schedule.LONGNAME == "") ? "" : schedule.LONGNAME);
+            comm.Parameters.AddWithValue("?SPECIALTY", (schedule.SPECIALTY == "") ? "" : schedule.SPECIALTY);
+            comm.Parameters.AddWithValue("?FOCUS", (schedule.FOCUS == "") ? "" : schedule.FOCUS);
             comm.Connection = conn;
             try
             {
@@ -105,6 +137,11 @@ namespace Advising_Tool.Controllers
         public IActionResult Administration()
         {
             return View(new Course());
+        }
+        [Route("/Add-Undergraduate-Sheet")]
+        public IActionResult AddUndergraduateSheet()
+        {
+            return View(new UndergraduateSchedule());
         }
         [Route("/Add-Graduate-Sheet")]
         public IActionResult AddGraduateSheet()
@@ -190,7 +227,7 @@ namespace Advising_Tool.Controllers
         [Route("/Undergraduate-Schedule")]
         public IActionResult UndergraduateRequest(UndergraduateRequest req)
         {
-            GraduateSchedule schedule = new();
+            UndergraduateSchedule schedule = new();
             using (MySqlConnection con = new(Utils.ConnectionString))
             {
                 using MySqlCommand cmd = new("SELECT * FROM areas WHERE AREA='" + req.AREA!.Replace(" ", "") + "' AND DEGREE='" + req.TYPE!.Replace(" ", "") + "'");
@@ -200,12 +237,13 @@ namespace Advising_Tool.Controllers
                 {
                     while (sdr.Read())
                     {
-                        schedule.FINAL = sdr["FINAL"].ToString()!;
-                        schedule.ELECTIVE = sdr["ELECTIVE"].ToString()!;
                         schedule.AREA = sdr["AREA"].ToString()!;
                         schedule.DEGREE = sdr["DEGREE"].ToString()!;
+                        schedule.LONGNAME = sdr["LONGNAME"].ToString()!;
                         schedule.COURSES = sdr["COURSES"].ToString()!;
-                        schedule.LONGNAME = req.NAME;
+                        schedule.ELECTIVE = sdr["ELECTIVE"].ToString()!;
+                        schedule.FINAL = sdr["FINAL"].ToString()!;
+                        schedule.NOTES = sdr["NOTES"].ToString()!;
                     }
                 }
                 con.Close();
@@ -227,13 +265,14 @@ namespace Advising_Tool.Controllers
                     while (sdr.Read())
                     {
                         schedule.AREA = sdr["AREA"].ToString()!;
-                        schedule.DEGREE = sdr["DEGREE"].ToString()!;
                         schedule.LONGNAME = sdr["LONGNAME"].ToString()!;
-                        schedule.COURSES = sdr["COURSES"].ToString()!;
-                        schedule.FINAL = sdr["FINAL"].ToString()!;
-                        schedule.ELECTIVE = sdr["ELECTIVE"].ToString()!;
-                        schedule.FOCUS = sdr["FOCUSELECT"].ToString()!;
-                        schedule.DEPTH = sdr["DEPTH"].ToString()!;
+                        schedule.DEGREE = sdr["DEGREE"].ToString()!;
+                        schedule.COURSES = (sdr["COURSES"].ToString()! == "") ? "" : sdr["COURSES"].ToString()!;
+                        schedule.FINAL = (sdr["FINAL"].ToString()! == "") ? "" : sdr["FINAL"].ToString()!;
+                        schedule.ELECTIVE = (sdr["ELECTIVE"].ToString()! == "") ? "" : sdr["ELECTIVE"].ToString()!;
+                        schedule.FOCUS = (sdr["FOCUSELECT"].ToString()! == "") ? "" : sdr["FOCUSELECT"].ToString()!;
+                        schedule.DEPTH = (sdr["DEPTH"].ToString()! == "") ? "" : sdr["DEPTH"].ToString()!;
+                        schedule.SPECIALTY = (sdr["SPECIALTY"].ToString()! == "") ? "" : sdr["SPECIALTY"].ToString()!;
                         schedule.NOTES = sdr["NOTES"].ToString()!;
                     }
                 }
